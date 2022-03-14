@@ -1,26 +1,26 @@
-from terra_sdk.client.lcd import LCDClient
-from terra_sdk.client.lcd.params import PaginationOptions
+from cyber_sdk.client.lcd import LCDClient
+from cyber_sdk.client.lcd.params import PaginationOptions
 
-terra = LCDClient(
-    url="https://bombay-lcd.terra.dev/",
-    chain_id="bombay-12",
+bostrom = LCDClient(
+    url="https://lcd.space-pussy-1.cybernode.ai/",
+    chain_id="space-pussy-1",
 )
 
 pagOpt = PaginationOptions(limit=2, count_total=True)
 
 
 def test_tx_info():
-    result = terra.tx.tx_info(
-        "7AB5550F54A1B6B8A480C6B870DFFB1E94D6DB7579F9620E4172525476B8BBA2"
+    result = bostrom.tx.tx_info(
+        "23AEDC95A3992E673111AFF899F0C98B46B6E408F8663758F1E492ADB8882D99"
     )
     assert result is not None
 
 
 def test_search():
-    result = terra.tx.search(
+    result = bostrom.tx.search(
         [
-            ("tx.height", 7549440),
-            ("message.sender", "terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v"),
+            ["tx.height", 1674816],
+            ["message.sender", "bostrom1udal5nr3lz7mg7j7k79se4rz0tsjj8lur45q99"],
         ]
     )
     assert result is not None
@@ -28,10 +28,10 @@ def test_search():
 
 
 def test_tx_infos_by_height():
-    result = terra.tx.tx_infos_by_height()
+    result = bostrom.tx.tx_infos_by_height()
     assert result is not None
 
 
 def test_tx_infos_by_height_with_height():
-    result = terra.tx.tx_infos_by_height(7549440)
+    result = bostrom.tx.tx_infos_by_height(1674816)
     assert result is not None

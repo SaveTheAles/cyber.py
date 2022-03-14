@@ -1,33 +1,33 @@
-from terra_sdk.client.lcd import LCDClient
-from terra_sdk.client.lcd.params import PaginationOptions
+from cyber_sdk.client.lcd import LCDClient
+from cyber_sdk.client.lcd.params import PaginationOptions
 
-terra = LCDClient(
-    url="https://bombay-lcd.terra.dev/",
-    chain_id="bombay-12",
+bostrom = LCDClient(
+    url="https://lcd.space-pussy-1.cybernode.ai/",
+    chain_id="space-pussy-1",
 )
 pagOpt = PaginationOptions(limit=2, count_total=True)
 
 
 def test_balance():
-    result, _ = terra.bank.balance(
-        address="terra1vk20anceu6h9s00d27pjlvslz3avetkvnph7p8"
+    result, _ = bostrom.bank.balance(
+        address="bostrom1vk20anceu6h9s00d27pjlvslz3avetkvnph7p8"
     )
     assert result.to_data()
-    assert result.get("uluna").amount > 0
+    assert result.get("boot").amount > 0
 
 
 def test_balance_with_pagination():
-    result, _ = terra.bank.balance(
-        address="terra1vk20anceu6h9s00d27pjlvslz3avetkvnph7p8", params=pagOpt
+    result, _ = bostrom.bank.balance(
+        address="bostrom1vk20anceu6h9s00d27pjlvslz3avetkvnph7p8", params=pagOpt
     )
     assert result.to_data()
 
 
 def test_total():
-    result, _ = terra.bank.total()
+    result, _ = bostrom.bank.total()
     assert result.to_data()
 
 
 def test_total_with_pagination():
-    result, _ = terra.bank.total(pagOpt)
+    result, _ = bostrom.bank.total(pagOpt)
     assert result.to_data()

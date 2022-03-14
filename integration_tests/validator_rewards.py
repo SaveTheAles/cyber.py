@@ -1,8 +1,8 @@
-from terra_sdk.client.lcd import LCDClient
+from cyber_sdk.client.lcd import LCDClient
 
-terra = LCDClient(chain_id="bombay-12", url="https://bombay-lcd.terra.dev")
+bostrom = LCDClient(chain_id="space-pussy-1", url="https://lcd.space-pussy-1.cybernode.ai/")
 print(
-    terra.distribution.validator_rewards(
-        "terravaloper1259cmu5zyklsdkmgstxhwqpe0utfe5hhyty0at"
+    bostrom.distribution.validator_rewards(
+        "bostromvaloper1259cmu5zyklsdkmgstxhwqpe0utfe5hhyty0at"
     )
 )

@@ -1,8 +1,8 @@
-from terra_sdk.client.lcd import LCDClient
+from cyber_sdk.client.lcd import LCDClient
 
-terra = LCDClient(
-    chain_id="bombay-12",
-    url="https://bombay-lcd.terra.dev/",
+bostrom = LCDClient(
+    chain_id="space-pussy-1",
+    url="https://lcd.space-pussy-1.cybernode.ai/",
 )
-res = terra.tendermint.node_info()
+res = bostrom.tendermint.node_info()
 print(res)

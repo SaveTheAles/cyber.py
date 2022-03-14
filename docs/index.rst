@@ -1,4 +1,4 @@
-.. Terra SDK documentation master file, created by
+.. Bostrom SDK documentation master file, created by
    sphinx-quickstart on Sat Feb  6 06:21:18 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -10,9 +10,9 @@ Introduction
     :align: center
     
 
-Welcome to the official documentation for the Terra Python SDK, a simple library toolkit for building software that interacts with the Terra blockchain. 
+Welcome to the official documentation for the Bostrom Python SDK, a simple library toolkit for building software that interacts with the Bostrom blockchain.
 
-Unfamiliar with Terra? → `Check out Terra Docs <https://docs.terra.money>`_
+Unfamiliar with Bostrom? → `Check out Bostrom Docs <https://docs.bostrom.money>`_
 
 .. toctree::
     :maxdepth: 1

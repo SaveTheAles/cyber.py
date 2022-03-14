@@ -1,22 +1,22 @@
 [{
   "type": "core/LazyGradedVestingAccount",
   "value": {
-    "address": "terra1upg95nlwkfkrq4hhjrn3k9s6ud0aqx36gwnlsn",
+    "address": "bostrom1upg95nlwkfkrq4hhjrn3k9s6ud0aqx36gwnlsn",
     "public_key": null,
     "account_number": "684082",
     "sequence": "0",
     "original_vesting": [{
-      "denom": "uluna",
+      "denom": "boot",
       "amount": "5000000000000"
     }],
     "delegated_free": [],
     "delegated_vesting": [{
-      "denom": "uluna",
+      "denom": "boot",
       "amount": "1338029091449"
     }],
     "end_time": "0",
     "vesting_schedules": [{
-      "denom": "uluna",
+      "denom": "boot",
       "schedules": [{
           "start_time": "1558677600",
           "end_time": "1561356000",

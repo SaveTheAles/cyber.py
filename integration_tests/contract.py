@@ -1,17 +1,17 @@
 from pathlib import Path
 
-from terra_sdk.client.lcd.api.tx import CreateTxOptions
-from terra_sdk.client.localterra import LocalTerra
-from terra_sdk.core import Coins
-from terra_sdk.core.fee import Fee
-from terra_sdk.core.wasm import MsgExecuteContract, MsgInstantiateContract, MsgStoreCode
-from terra_sdk.util.contract import get_code_id, get_contract_address, read_file_as_b64
+from cyber_sdk.client.lcd.api.tx import CreateTxOptions
+from cyber_sdk.client.localbostrom import LocalBostrom
+from cyber_sdk.core import Coins
+from cyber_sdk.core.fee import Fee
+from cyber_sdk.core.wasm import MsgExecuteContract, MsgInstantiateContract, MsgStoreCode
+from cyber_sdk.util.contract import get_code_id, get_contract_address, read_file_as_b64
 
 
 def main():
-    terra = LocalTerra()
-    terra.gas_prices = "1uluna"
-    test1 = terra.wallets["test1"]
+    bostrom = LocalBostrom()
+    bostrom.gas_prices = "1boot"
+    test1 = bostrom.wallets["test1"]
 
     store_code_tx = test1.create_and_sign_tx(
         CreateTxOptions(
@@ -24,7 +24,7 @@ def main():
             gas_adjustment=1.75,
         )
     )
-    store_code_tx_result = terra.tx.broadcast(store_code_tx)
+    store_code_tx_result = bostrom.tx.broadcast(store_code_tx)
     print(store_code_tx_result)
 
     code_id = get_code_id(store_code_tx_result)
@@ -37,17 +37,17 @@ def main():
                     test1.key.acc_address, test1.key.acc_address, code_id, {"count": 10}
                 )
             ],
-            gas_prices="10uluna",
+            gas_prices="10boot",
             gas_adjustment=2,
         )
     )
     print(instantiate_tx)
-    instantiate_tx_result = terra.tx.broadcast(instantiate_tx)
+    instantiate_tx_result = bostrom.tx.broadcast(instantiate_tx)
     print(instantiate_tx_result)
     contract_address = get_contract_address(instantiate_tx_result)
     # """
-    # contract_address = "terra1e8d3cw4j0k5fm9gw03jzh9xzhzyz99pa8tphd8"
-    result = terra.wasm.contract_query(contract_address, {"get_count": {}})
+    # contract_address = "bostrom1e8d3cw4j0k5fm9gw03jzh9xzhzyz99pa8tphd8"
+    result = bostrom.wasm.contract_query(contract_address, {"get_count": {}})
     print("get_count1: ", result)
     execute_tx = test1.create_and_sign_tx(
         CreateTxOptions(
@@ -61,12 +61,12 @@ def main():
             gas_adjustment=1.75,
         )
     )
-    #                {"uluna": 1000},
+    #                {"boot": 1000},
 
-    execute_tx_result = terra.tx.broadcast(execute_tx)
+    execute_tx_result = bostrom.tx.broadcast(execute_tx)
     print(execute_tx_result)
 
-    result = terra.wasm.contract_query(contract_address, {"get_count": {}})
+    result = bostrom.wasm.contract_query(contract_address, {"get_count": {}})
     print("get_count2: ", result)
 
 

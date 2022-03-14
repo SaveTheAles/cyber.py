@@ -1,9 +1,9 @@
 """
-from terra_sdk.client.lcd.api.tx import CreateTxOptions
-from terra_sdk.client.localterra import LocalTerra
-from terra_sdk.core import Coin, Coins
+from cyber_sdk.client.lcd.api.tx import CreateTxOptions
+from cyber_sdk.client.localbostrom import LocalBostrom
+from cyber_sdk.core import Coin, Coins
 
-from terra_sdk.core.authz import MsgGrantAuthorization, MsgExecAuthorized, MsgRevokeAuthorization
+from cyber_sdk.core.authz import MsgGrantAuthorization, MsgExecAuthorized, MsgRevokeAuthorization
 """
 
 """ untested

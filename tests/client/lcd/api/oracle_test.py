@@ -1,54 +1,54 @@
-from terra_sdk.client.lcd import LCDClient
+from cyber_sdk.client.lcd import LCDClient
 
-terra = LCDClient(
-    url="https://bombay-lcd.terra.dev/",
-    chain_id="bombay-12",
+bostrom = LCDClient(
+    url="https://lcd.space-pussy-1.cybernode.ai/",
+    chain_id="space-pussy-1",
 )
 
 
 def test_exchange_rates():
-    result = terra.oracle.exchange_rates()
+    result = bostrom.oracle.exchange_rates()
     assert result is not None
 
 
 def test_exchange_rate():
-    result = terra.oracle.exchange_rate("ukrw")
+    result = bostrom.oracle.exchange_rate("ukrw")
     assert result is not None
 
 
 def test_active_denoms():
-    result = terra.oracle.active_denoms()
+    result = bostrom.oracle.active_denoms()
     assert result is not None
 
 
 def test_feeder_address():
-    result = terra.oracle.feeder_address(
-        "terravaloper19ne0aqltndwxl0n32zyuglp2z8mm3nu0gxpfaw"
+    result = bostrom.oracle.feeder_address(
+        "bostromvaloper19ne0aqltndwxl0n32zyuglp2z8mm3nu0gxpfaw"
     )
     assert result is not None
 
 
 def test_misses():
-    result = terra.oracle.misses("terravaloper19ne0aqltndwxl0n32zyuglp2z8mm3nu0gxpfaw")
+    result = bostrom.oracle.misses("bostromvaloper19ne0aqltndwxl0n32zyuglp2z8mm3nu0gxpfaw")
     assert result is not None
 
 
 def test_aggregate_prevote():
-    result = terra.oracle.aggregate_prevote(
-        "terravaloper19ne0aqltndwxl0n32zyuglp2z8mm3nu0gxpfaw"
+    result = bostrom.oracle.aggregate_prevote(
+        "bostromvaloper19ne0aqltndwxl0n32zyuglp2z8mm3nu0gxpfaw"
     )
     assert result is not None
 
 
 # def test_aggregate_vote():
-#    result = terra.oracle.aggregate_vote(
-#        "terravaloper19ne0aqltndwxl0n32zyuglp2z8mm3nu0gxpfaw"
+#    result = bostrom.oracle.aggregate_vote(
+#        "bostromvaloper19ne0aqltndwxl0n32zyuglp2z8mm3nu0gxpfaw"
 #    )
 #    assert(result is not None)
 
 
 def test_parameters():
-    result = terra.oracle.parameters()
+    result = bostrom.oracle.parameters()
     assert result.get("vote_period")
     assert result.get("vote_threshold")
     assert result.get("reward_band")

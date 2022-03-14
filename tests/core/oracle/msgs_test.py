@@ -1,4 +1,4 @@
-from terra_sdk.core.oracle import MsgAggregateExchangeRateVote, MsgDelegateFeedConsent
+from cyber_sdk.core.oracle import MsgAggregateExchangeRateVote, MsgDelegateFeedConsent
 
 
 def test_deserializes_msg_delegate_feed_consent_examples(load_msg_examples):
@@ -17,8 +17,8 @@ def test_msg_aggregate_exchange_rate_vote_get_aggregate_vote_hash(load_msg_examp
             "usdr": "0.182",
         },
         "salt",
-        "terra1krj7amhhagjnyg2tkkuh6l0550y733jnjulzjh",
-        "terravaloper1krj7amhhagjnyg2tkkuh6l0550y733jnjnnlzy",
+        "bostrom1krj7amhhagjnyg2tkkuh6l0550y733jnjulzjh",
+        "bostromvaloper1krj7amhhagjnyg2tkkuh6l0550y733jnjnnlzy",
     )
 
     assert (

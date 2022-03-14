@@ -1,11 +1,11 @@
 Building and Signing Transactions
 =================================
 
-If you want to perform a state-changing operation on the Terra blockchain such as
+If you want to perform a state-changing operation on the Bostrom blockchain such as
 sending tokens, swapping assets, withdrawing rewards, or even invoking functions on
 smart contracts, you must create a **transaction** and broadcast it to the network.
 
-An :class:`StdTx<terra_sdk.core.tx.Tx>` is a data object that represents
+An :class:`StdTx<bostrom_sdk.core.tx.Tx>` is a data object that represents
 a transaction. It contains:
 
 - **msgs**: a list of state-altering messages
@@ -13,7 +13,7 @@ a transaction. It contains:
 - **signatures**: a list of signatures from required signers (depends on messages)
 - **memo**: a short string describing transaction (can be empty string)
 
-Terra SDK provides functions that help create StdTx objects.
+Bostrom SDK provides functions that help create StdTx objects.
 
 Using a Wallet (recommended)
 ----------------------------
@@ -22,40 +22,40 @@ Using a Wallet (recommended)
     This method requires an LCDClient instance with a proper node connection. If you
     can't use Wallet, see `Signing transactions manually`_.
 
-A :class:`Wallet<terra_sdk.client.lcd.wallet.Wallet>` allows you to create and sign a transaction in a single step by automatically
+A :class:`Wallet<bostrom_sdk.client.lcd.wallet.Wallet>` allows you to create and sign a transaction in a single step by automatically
 fetching the latest information from the blockchain (chain ID, account number, sequence).
 
-Use :meth:`LCDClient.wallet()<terra_sdk.client.lcd.LCDClient.wallet>` to create a Wallet from any Key instance. The Key provided should
+Use :meth:`LCDClient.wallet()<bostrom_sdk.client.lcd.LCDClient.wallet>` to create a Wallet from any Key instance. The Key provided should
 correspond to the account you intend to sign the transaction with.
 
 .. code-block:: python
 
-    from terra_sdk.client.lcd import LCDClient
-    from terra_sdk.key.mnemonic import MnemonicKey
+    from bostrom_sdk.client.lcd import LCDClient
+    from bostrom_sdk.key.mnemonic import MnemonicKey
 
     mk = MnemonicKey(mnemonic=MNEMONIC) 
-    terra = LCDClient("https://lcd.terra.dev", "columbus-5")
-    wallet = terra.wallet(mk)
+    bostrom = LCDClient("https://lcd.bostrom.dev", "columbus-5")
+    wallet = bostrom.wallet(mk)
 
 
 Once you have your Wallet, you can simply create a StdTx using :meth:`Wallet.create_and_sign_tx`.
 
 .. code-block:: python
 
-    from terra_sdk.client.lcd.api.tx import CreateTxOptions
-    from terra_sdk.core.fee import Fee
-    from terra_sdk.core.bank import MsgSend
+    from bostrom_sdk.client.lcd.api.tx import CreateTxOptions
+    from bostrom_sdk.core.fee import Fee
+    from bostrom_sdk.core.bank import MsgSend
 
     tx = wallet.create_and_sign_tx(
         CreateTxOptions(
             msgs=[MsgSend(
                 wallet.key.acc_address,
                 RECIPIENT,
-                "1000000uluna" # send 1 luna
+                "1000000boot" # send 1 luna
             )]
             ,
             memo="test transaction!",
-            fee=Fee(200000, "120000uluna")
+            fee=Fee(200000, "120000boot")
         )
     )
 
@@ -63,13 +63,13 @@ And that's it! You should now be able to broadcast your transaction to the netwo
 
 .. code-block:: python
 
-    result = terra.tx.broadcast(tx)
+    result = bostrom.tx.broadcast(tx)
     print(result)
 
 Automatic fee estimation
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-If no ``fee`` parameter is provided for :meth:`Wallet.create_and_sign_tx()<terra_sdk.client.lcd.wallet.Wallet.create_and_sign_tx>`,
+If no ``fee`` parameter is provided for :meth:`Wallet.create_and_sign_tx()<bostrom_sdk.client.lcd.wallet.Wallet.create_and_sign_tx>`,
 the transaction fee will be simulated against the node and populated for you. By default, ``Wallet``
 will use the fee estimation parameters of the ``LCDClient`` used to create it. You can override
 this behavior **per transaction**:
@@ -80,8 +80,8 @@ this behavior **per transaction**:
 
 .. note::
     By default, the estimated fee returned consists of a fee paid in every denom for which the
-    signing account hold a balance. For instance, if the signer has a balance of ``uusd`` and ``uluna``,
-    the fee reported will be both ``uusd`` and ``uluna``. 
+    signing account hold a balance. For instance, if the signer has a balance of ``uusd`` and ``boot``,
+    the fee reported will be both ``uusd`` and ``boot``.
     
     Use the ``denoms`` argument to restrict the estimated fee to specific denoms.
 
@@ -93,10 +93,10 @@ this behavior **per transaction**:
         msgs=[MsgSend(
             wallet.key.acc_address,
             RECIPIENT,
-            "1000000uluna" # send 1 luna
+            "1000000boot" # send 1 luna
         )],
         memo="test transaction!",
-        gas_prices="0.015uluna,0.11ukrw", # optional
+        gas_prices="0.015boot,0.11ukrw", # optional
         gas_adjustment="1.2", # optional
         denoms=["ukrw"] # optional
     ))
@@ -105,7 +105,7 @@ Signing transactions manually
 -----------------------------
 
 Below is the full process of signing a transaction manually that does not use ``Wallet``.
-You will need to build a :class:`SignDoc<terra_sdk.core.sign_doc.SignDoc>`,
+You will need to build a :class:`SignDoc<bostrom_sdk.core.sign_doc.SignDoc>`,
 sign it, and add the signatures to an ``Tx``.
 
 A SignDoc contains the information required to build a StdTx:
@@ -118,21 +118,21 @@ A SignDoc contains the information required to build a StdTx:
 
 .. code-block:: python
 
-    from terra_sdk.client.lcd.api.tx import CreateTxOptions, SignerOptions
-    from terra_sdk.client.lcd import LCDClient
-    from terra_sdk.core.bank import MsgSend
-    from terra_sdk.core.tx import SignMode
-    from terra_sdk.key.key import SignOptions
-    from terra_sdk.key.mnemonic import MnemonicKey
-    from terra_sdk.core import Coin, Coins
+    from bostrom_sdk.client.lcd.api.tx import CreateTxOptions, SignerOptions
+    from bostrom_sdk.client.lcd import LCDClient
+    from bostrom_sdk.core.bank import MsgSend
+    from bostrom_sdk.core.tx import SignMode
+    from bostrom_sdk.key.key import SignOptions
+    from bostrom_sdk.key.mnemonic import MnemonicKey
+    from bostrom_sdk.core import Coin, Coins
 
-    terra = LCDClient("https://lcd.terra.dev", "columbus-5")
+    bostrom = LCDClient("https://lcd.bostrom.dev", "columbus-5")
     key = MnemonicKey(mnemonic=MNEMONIC)
 
     msg = MsgSend(
         key.acc_address,
-        "terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v",
-        Coins(uluna=30000),
+        "bostrom1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v",
+        Coins(boot=30000),
     )
 
     tx_opt = CreateTxOptions(
@@ -143,7 +143,7 @@ A SignDoc contains the information required to build a StdTx:
         address=key.acc_address,
     )
 
-    acc_info = terra.auth.account_info(key.acc_address)
+    acc_info = bostrom.auth.account_info(key.acc_address)
 
     sign_opt = SignOptions(
         account_number=acc_info.account_number,
@@ -152,12 +152,12 @@ A SignDoc contains the information required to build a StdTx:
         chain_id='columbus-5'
     )
 
-    tx = terra.tx.create([signer_opt], tx_opt)
+    tx = bostrom.tx.create([signer_opt], tx_opt)
 
     signed_tx = key.sign_tx(tx, sign_opt)
 
     # broadcast tx
-    result = terra.tx.broadcast(signed_tx)
+    result = bostrom.tx.broadcast(signed_tx)
     print(result)
 
 
@@ -167,7 +167,7 @@ Applying multiple signatures
 
 Some messages, such as ``MsgMultiSend``, require the transaction to be signed with multiple signatures.
 You must prepare a separate ``SignDoc`` for each signer to sign individually, and then
-combine them in the ``signatures`` field of the final :class:`StdTx<terra_sdk.core..tx.Tx>` object. 
+combine them in the ``signatures`` field of the final :class:`StdTx<bostrom_sdk.core..tx.Tx>` object.
 Each ``SignDoc`` should only differ by ``account`` and ``sequence``, which vary according to the signing key.
 
 .. note::
@@ -176,34 +176,34 @@ Each ``SignDoc`` should only differ by ``account`` and ``sequence``, which vary 
 
 .. code-block:: python
 
-    from terra_sdk.client.lcd import LCDClient
-    from terra_sdk.core.fee import Fee
-    from terra_sdk.core.bank import MsgMultiSend
-    from terra_sdk.key.mnemonic import MnemonicKey
-    from terra_sdk.core.bank import MsgMultiSend, MultiSendInput, MultiSendOutput
+    from bostrom_sdk.client.lcd import LCDClient
+    from bostrom_sdk.core.fee import Fee
+    from bostrom_sdk.core.bank import MsgMultiSend
+    from bostrom_sdk.key.mnemonic import MnemonicKey
+    from bostrom_sdk.core.bank import MsgMultiSend, MultiSendInput, MultiSendOutput
 
-    terra = LCDClient("https://lcd.terra.dev", "columbus-5")
-    wallet1 = terra.wallet(MnemonicKey(mnemonic=MNEMONIC_1))
-    wallet2 = terra.wallet(MnemonicKey(mnemonic=MNEMONIC_2))
+    bostrom = LCDClient("https://lcd.bostrom.dev", "columbus-5")
+    wallet1 = bostrom.wallet(MnemonicKey(mnemonic=MNEMONIC_1))
+    wallet2 = bostrom.wallet(MnemonicKey(mnemonic=MNEMONIC_2))
 
     inputs = [
         MultiSendInput(
             address=wallet1.key.acc_address,
-            coins=Coins(uluna=10000),
+            coins=Coins(boot=10000),
         ),
         MultiSendInput(
             address=wallet2.key.acc_address,
-            coins=Coins(uluna=20000),
+            coins=Coins(boot=20000),
         )
     ]
     outputs = [
         MultiSendOutput(
             address=wallet1.key.acc_address,
-            coins=Coins(uluna=20000),
+            coins=Coins(boot=20000),
         ),
         MultiSendOutput(
             address=wallet2.key.acc_address,
-            coins=Coins(uluna=10000),
+            coins=Coins(boot=10000),
         ),
     ]
 
@@ -213,14 +213,14 @@ Each ``SignDoc`` should only differ by ``account`` and ``sequence``, which vary 
         msgs=[msg]
     )
 
-    tx = terra.tx.create(
+    tx = bostrom.tx.create(
         [SignerOptions(address=wallet1.key.acc_address), SignerOptions(address=wallet2.key.acc_address)], opt)
 
     info1 = wallet1.account_number_and_sequence()
     info2 = wallet2.account_number_and_sequence()
 
     signdoc1 = SignDoc(
-        chain_id=terra.chain_id,
+        chain_id=bostrom.chain_id,
         account_number=info1["account_number"],
         sequence=info1["sequence"],
         auth_info=tx.auth_info,
@@ -228,7 +228,7 @@ Each ``SignDoc`` should only differ by ``account`` and ``sequence``, which vary 
     )
 
     signdoc2 = SignDoc(
-        chain_id=terra.chain_id,
+        chain_id=bostrom.chain_id,
         account_number=info2["account_number"],
         sequence=info2["sequence"],
         auth_info=tx.auth_info,
@@ -238,7 +238,7 @@ Each ``SignDoc`` should only differ by ``account`` and ``sequence``, which vary 
     sig2 = wallet2.key.create_signature_amino(signdoc2)
     tx.append_signatures([sig1, sig2])
 
-    result = terra.tx.broadcast(tx)
+    result = bostrom.tx.broadcast(tx)
     print(result)
 
 

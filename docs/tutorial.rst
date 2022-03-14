@@ -11,12 +11,12 @@ Quickstart
 Installation
 ------------
 
-Terra SDK can be installed (preferably in a :ref:`virtualenv <setup_environment>`)
+Bostrom SDK can be installed (preferably in a :ref:`virtualenv <setup_environment>`)
 using ``pip`` as follows:
 
 .. code-block:: shell
 
-   $ pip install terra-sdk 
+   $ pip install bostrom-sdk
 
 
 .. note:: If you run into problems during installation, you might have a
@@ -24,31 +24,31 @@ using ``pip`` as follows:
     clean environment <setup_environment>`.
 
 
-Using Terra SDK
+Using Bostrom SDK
 ---------------
 
-In order to interact with the Terra blockchain, you'll need a connection to a Terra node.
+In order to interact with the Bostrom blockchain, you'll need a connection to a Bostrom node.
 This can be done through setting up an LCDClient:
 
 
 .. code-block:: python
 
-    from terra_sdk.client.lcd import LCDClient
+    from bostrom_sdk.client.lcd import LCDClient
 
-    terra = LCDClient(chain_id="columbus-5", url="https://lcd.terra.dev")
-    print(terra.tendermint.node_info())
+    bostrom = LCDClient(chain_id="space-pussy-1", url="https://lcd.space-pussy-1.cybernode.ai/")
+    print(bostrom.tendermint.node_info())
 
 
 Getting Blockchain Info
 -----------------------
 
-It's time to start using Terra SDK! Once properly configured, the ``LCDClient`` instance will allow you
-to interact with the Terra blockchain. Try getting the latest block height:
+It's time to start using Bostrom SDK! Once properly configured, the ``LCDClient`` instance will allow you
+to interact with the Bostrom blockchain. Try getting the latest block height:
 
 .. code-block:: python
 
-    >>> terra.tendermint.block_info()['block']['header']['height']
+    >>> bostrom.tendermint.block_info()['block']['header']['height']
     '1687543'
 
-Terra SDK can help you read block data, sign and send transactions, deploy and interact with contracts,
+Bostrom SDK can help you read block data, sign and send transactions, deploy and interact with contracts,
 and a number of other features.

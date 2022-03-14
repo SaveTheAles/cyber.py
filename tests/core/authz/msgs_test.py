@@ -1,4 +1,4 @@
-from terra_sdk.core.authz import (
+from cyber_sdk.core.authz import (
     MsgExecAuthorized,
     MsgGrantAuthorization,
     MsgRevokeAuthorization,

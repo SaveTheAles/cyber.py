@@ -1,23 +1,23 @@
-from terra_sdk.client.lcd import LCDClient
+from cyber_sdk.client.lcd import LCDClient
 
-terra = LCDClient(
-    url="https://bombay-lcd.terra.dev/",
-    chain_id="bombay-12",
+bostrom = LCDClient(
+    url="https://lcd.space-pussy-1.cybernode.ai/",
+    chain_id="space-pussy-1",
 )
 
 
 def test_inflation():
-    result = terra.mint.inflation()
+    result = bostrom.mint.inflation()
     print(result.to_data())
 
 
 def test_annual_provisions():
-    result = terra.mint.annual_provisions()
+    result = bostrom.mint.annual_provisions()
     print(result.to_data())
 
 
 def test_parameters():
-    result = terra.mint.parameters()
+    result = bostrom.mint.parameters()
     print(result.get("mint_denom"))
     print(result.get("inflation_rate_change"))
     print(result.get("inflation_max"))

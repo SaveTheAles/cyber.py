@@ -1,15 +1,15 @@
 import asyncio
 from pathlib import Path
 
-from terra_sdk.client.localterra import AsyncLocalTerra
-from terra_sdk.core import Coins, Fee
-from terra_sdk.core.wasm import MsgExecuteContract, MsgInstantiateContract, MsgStoreCode
-from terra_sdk.util.contract import get_code_id, get_contract_address, read_file_as_b64
+from cyber_sdk.client.localbostrom import AsyncLocalBostrom
+from cyber_sdk.core import Coins, Fee
+from cyber_sdk.core.wasm import MsgExecuteContract, MsgInstantiateContract, MsgStoreCode
+from cyber_sdk.util.contract import get_code_id, get_contract_address, read_file_as_b64
 
 
 async def async_main():
-    async with AsyncLocalTerra() as terra:
-        test1 = terra.wallets["test1"]
+    async with AsyncLocalBostrom() as bostrom:
+        test1 = bostrom.wallets["test1"]
         store_code_tx = await test1.create_and_sign_tx(
             msgs=[
                 MsgStoreCode(
@@ -18,7 +18,7 @@ async def async_main():
                 )
             ]
         )
-        store_code_tx_result = await terra.tx.broadcast(store_code_tx)
+        store_code_tx_result = await bostrom.tx.broadcast(store_code_tx)
         print(store_code_tx_result)
         code_id = get_code_id(store_code_tx_result)
         instantiate_tx = await test1.create_and_sign_tx(
@@ -27,12 +27,12 @@ async def async_main():
                     test1.key.acc_address,
                     code_id,
                     {"count": 0},
-                    {"uluna": 10000000, "ukrw": 1000000},
+                    {"boot": 10000000, "ukrw": 1000000},
                     False,
                 )
             ]
         )
-        instantiate_tx_result = await terra.tx.broadcast(instantiate_tx)
+        instantiate_tx_result = await bostrom.tx.broadcast(instantiate_tx)
         print(instantiate_tx_result)
         contract_address = get_contract_address(instantiate_tx_result)
 
@@ -42,16 +42,16 @@ async def async_main():
                     test1.key.acc_address,
                     contract_address,
                     {"increment": {}},
-                    {"uluna": 100000},
+                    {"boot": 100000},
                 )
             ],
-            fee=Fee(1000000, Coins(uluna=1000000)),
+            fee=Fee(1000000, Coins(boot=1000000)),
         )
 
-        execute_tx_result = await terra.tx.broadcast(execute_tx)
+        execute_tx_result = await bostrom.tx.broadcast(execute_tx)
         print(execute_tx_result)
 
-        result = await terra.wasm.contract_query(contract_address, {"get_count": {}})
+        result = await bostrom.wasm.contract_query(contract_address, {"get_count": {}})
         print(result)
 
 

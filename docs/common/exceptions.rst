@@ -1,5 +1,5 @@
 Exceptions
 ==========
 
-.. automodule:: terra_sdk.exceptions
+.. automodule:: bostrom_sdk.exceptions
     :members:

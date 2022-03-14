@@ -1,26 +1,26 @@
 import base64
 
-from terra_sdk.client.lcd.api.tx import CreateTxOptions, SignerOptions
-from terra_sdk.client.lcd.lcdclient import LCDClient
-from terra_sdk.core import Coins, SignDoc
-from terra_sdk.core.bank import MsgSend
-from terra_sdk.core.fee import Fee
-from terra_sdk.key.mnemonic import MnemonicKey
+from cyber_sdk.client.lcd.api.tx import CreateTxOptions, SignerOptions
+from cyber_sdk.client.lcd.lcdclient import LCDClient
+from cyber_sdk.core import Coins, SignDoc
+from cyber_sdk.core.bank import MsgSend
+from cyber_sdk.core.fee import Fee
+from cyber_sdk.key.mnemonic import MnemonicKey
 
 
 def test_derivation():
     mk = MnemonicKey(
         "wonder caution square unveil april art add hover spend smile proud admit modify old copper throw crew happy nature luggage reopen exhibit ordinary napkin"
     )
-    assert mk.acc_address == "terra1jnzv225hwl3uxc5wtnlgr8mwy6nlt0vztv3qqm"
+    assert mk.acc_address == "bostrom1jnzv225hwl3uxc5wtnlgr8mwy6nlt0vztv3qqm"
     assert (
         mk.acc_pubkey
-        == "terrapub1addwnpepqt8ha594svjn3nvfk4ggfn5n8xd3sm3cz6ztxyugwcuqzsuuhhfq5nwzrf9"
+        == "bostrompub1addwnpepqt8ha594svjn3nvfk4ggfn5n8xd3sm3cz6ztxyugwcuqzsuuhhfq5nwzrf9"
     )
-    assert mk.val_address == "terravaloper1jnzv225hwl3uxc5wtnlgr8mwy6nlt0vztraasg"
+    assert mk.val_address == "bostromvaloper1jnzv225hwl3uxc5wtnlgr8mwy6nlt0vztraasg"
     assert (
         mk.val_pubkey
-        == "terravaloperpub1addwnpepqt8ha594svjn3nvfk4ggfn5n8xd3sm3cz6ztxyugwcuqzsuuhhfq5y7accr"
+        == "bostromvaloperpub1addwnpepqt8ha594svjn3nvfk4ggfn5n8xd3sm3cz6ztxyugwcuqzsuuhhfq5y7accr"
     )
 
 
@@ -32,21 +32,21 @@ def test_random():
 
 def test_signature():
 
-    terra = LCDClient(url="https://lcd.terra.dev", chain_id="columbus-5")
+    bostrom = LCDClient(url="https://lcd.space-pussy-1.cybernode.ai/", chain_id="space-pussy-1")
 
     mk = MnemonicKey(
         "island relax shop such yellow opinion find know caught erode blue dolphin behind coach tattoo light focus snake common size analyst imitate employ walnut"
     )
 
-    account = terra.wallet(mk)
+    account = bostrom.wallet(mk)
 
     send = MsgSend(
         mk.acc_address,
-        "terra1wg2mlrxdmnnkkykgqg4znky86nyrtc45q336yv",
-        dict(uluna="100000000"),
+        "bostrom1wg2mlrxdmnnkkykgqg4znky86nyrtc45q336yv",
+        dict(boot="100000000"),
     )
 
-    tx = terra.tx.create(
+    tx = bostrom.tx.create(
         signers=[
             SignerOptions(
                 address=mk.acc_address, sequence=0, public_key=account.key.public_key
@@ -58,7 +58,7 @@ def test_signature():
     )
 
     signDoc = SignDoc(
-        chain_id=terra.chain_id,
+        chain_id=bostrom.chain_id,
         account_number=1234,
         sequence=0,
         auth_info=tx.auth_info,

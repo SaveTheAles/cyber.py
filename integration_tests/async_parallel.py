@@ -2,7 +2,7 @@ import asyncio
 
 import uvloop
 
-from terra_sdk.client.lcd import AsyncLCDClient
+from cyber_sdk.client.lcd import AsyncLCDClient
 
 
 async def with_sem(aw, sem):
@@ -12,19 +12,19 @@ async def with_sem(aw, sem):
 
 
 async def main():
-    terra = AsyncLCDClient(url="https://lcd.terra.dev", chain_id="columbus-5")
-    validators, _ = await terra.staking.validators()
+    bostrom = AsyncLCDClient(url="https://lcd.space-pussy-1.cybernode.ai/", chain_id="space-pussy-1")
+    validators, _ = await bostrom.staking.validators()
     validator_addresses = [v.operator_address for v in validators]
 
     sem = asyncio.Semaphore(2)  # 2 continuous connections
     result = await asyncio.gather(
         *[
-            with_sem(terra.oracle.misses(address), sem)
+            with_sem(bostrom.oracle.misses(address), sem)
             for address in validator_addresses
         ]
     )
 
-    await terra.session.close()
+    await bostrom.session.close()
     print(result)
 
 

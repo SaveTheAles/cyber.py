@@ -4,23 +4,23 @@ Distribution
 API
 ---
 
-.. autoclass:: terra_sdk.client.lcd.api.distribution.DistributionAPI
+.. autoclass:: bostrom_sdk.client.lcd.api.distribution.DistributionAPI
     :members: 
 
 Data
 ----
 
-.. autoclass:: terra_sdk.client.lcd.api.distribution.Rewards
+.. autoclass:: bostrom_sdk.client.lcd.api.distribution.Rewards
     :members: 
 
 Messages
 --------
 
-.. automodule:: terra_sdk.core.distribution.msgs
+.. automodule:: bostrom_sdk.core.distribution.msgs
     :members:
 
 Proposals
 ---------
 
-.. automodule:: terra_sdk.core.distribution.proposals
+.. automodule:: bostrom_sdk.core.distribution.proposals
     :members:

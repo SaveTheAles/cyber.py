@@ -1,4 +1,4 @@
-- terra_sdk version:
+- bostrom_sdk version:
 - Python version:
 - Operating System:
 

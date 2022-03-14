@@ -2,40 +2,40 @@ import asyncio
 import base64
 from pathlib import Path
 
-from terra_sdk.client.lcd import LCDClient
-from terra_sdk.client.lcd.api.tx import CreateTxOptions
-from terra_sdk.core import Coins
-from terra_sdk.core.bank import MsgSend
-from terra_sdk.core.tx import SignMode
-from terra_sdk.key.mnemonic import MnemonicKey
+from cyber_sdk.client.lcd import LCDClient
+from cyber_sdk.client.lcd.api.tx import CreateTxOptions
+from cyber_sdk.core import Coins
+from cyber_sdk.core.bank import MsgSend
+from cyber_sdk.core.tx import SignMode
+from cyber_sdk.key.mnemonic import MnemonicKey
 
 
 def main():
-    terra = LCDClient(
-        url="http://localhost:1317/",
-        chain_id="localterra",
+    bostrom = LCDClient(
+        url="https://lcd.space-pussy-1.cybernode.ai/",
+        chain_id="space-pussy-1",
     )
     key = MnemonicKey(
-        mnemonic="notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius"
+        mnemonic='develop sail resist join lumber door door jelly apology trap note seek gentle bamboo enough concert exhibit disorder turn soul bullet cash debris wire'
     )
-    test1 = terra.wallet(key=key)
+    test1 = bostrom.wallet(key=key)
 
     msg = MsgSend(
-        "terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v",
-        "terra17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp",
-        Coins(uluna=20000),
+        "bostrom1udal5nr3lz7mg7j7k79se4rz0tsjj8lur45q99",
+        "bostrom1hmkqhy8ygl6tnl5g8tc503rwrmmrkjcq3lduwj",
+        Coins(boot=1),
     )
     print(msg)
     tx = test1.create_and_sign_tx(
         CreateTxOptions(
             msgs=[msg],
-            gas_prices="0.15uluna",
-            gas="63199",  # gas="auto", gas_adjustment=1.1
+            gas_prices="0.1boot",
+            gas="80000",  # gas="auto", gas_adjustment=1.1
         )
     )
     print(tx)
 
-    result = terra.tx.broadcast(tx)
+    result = bostrom.tx.broadcast(tx)
     print(result)
 
 

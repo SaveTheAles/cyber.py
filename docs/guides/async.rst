@@ -13,13 +13,13 @@ You can replace your LCDClient instance with AsyncLCDClient inside a coroutine f
     :emphasize-lines: 5,8
 
     import asyncio 
-    from terra_sdk.client.lcd import AsyncLCDClient
+    from bostrom_sdk.client.lcd import AsyncLCDClient
 
     async def main():
-        terra = AsyncLCDClient("https://lcd.terra.dev", "columbus-5")
-        total_supply = await terra.bank.total()
+        bostrom = AsyncLCDClient("https://lcd.bostrom.dev", "columbus-5")
+        total_supply = await bostrom.bank.total()
         print(total_supply)
-        await terra.session.close() # you must close the session
+        await bostrom.session.close() # you must close the session
 
     asyncio.get_event_loop().run_until_complete(main())
 
@@ -31,11 +31,11 @@ session. Here's the same code as above, this time using the ``async with`` const
     :emphasize-lines: 5
 
     import asyncio 
-    from terra_sdk.client.lcd import AsyncLCDClient
+    from bostrom_sdk.client.lcd import AsyncLCDClient
 
     async def main():
-        async with AsyncLCDClient("https://lcd.terra.dev", "columbus-5") as terra:
-            total_supply = await terra.bank.total()
+        async with AsyncLCDClient("https://lcd.bostrom.dev", "columbus-5") as bostrom:
+            total_supply = await bostrom.bank.total()
             print(total_supply)
 
     asyncio.get_event_loop().run_until_complete(main())
@@ -50,21 +50,21 @@ are also asychronous and therefore must be awaited.
     :emphasize-lines: 12-13
 
     import asyncio
-    from terra_sdk.client.lcd.api.tx import CreateTxOptions
-    from terra_sdk.client.lcd import AsyncLCDClient
-    from terra_sdk.key.mnemonic import MnemonicKey
-    from terra_sdk.core import Coins
+    from bostrom_sdk.client.lcd.api.tx import CreateTxOptions
+    from bostrom_sdk.client.lcd import AsyncLCDClient
+    from bostrom_sdk.key.mnemonic import MnemonicKey
+    from bostrom_sdk.core import Coins
 
     mk = MnemonicKey()
-    recipient = "terra1..."
+    recipient = "bostrom1..."
 
     async def main():
-        async with AsyncLCDClient("https://lcd.terra.dev", "columbus-5") as terra:
-            wallet = terra.wallet(mk)
+        async with AsyncLCDClient("https://lcd.bostrom.dev", "columbus-5") as bostrom:
+            wallet = bostrom.wallet(mk)
             account_number = await wallet.account_number()
             tx = await wallet.create_and_sign_tx(
                 CreateTxOptions(
-                    msgs=[MsgSend(wallet.key.acc_address, recipient, Coins(uluna=10202))]
+                    msgs=[MsgSend(wallet.key.acc_address, recipient, Coins(boot=10202))]
                 )
             )
     
@@ -82,10 +82,10 @@ for more performance. For example:
     import asyncio
     import uvloop
 
-    from terra_sdk.client.lcd import AsyncLCDClient
+    from bostrom_sdk.client.lcd import AsyncLCDClient
 
     async def main():
-        async with AsyncLCDClient("https://lcd.terra.dev", "columbus-5") as terra:
+        async with AsyncLCDClient("https://lcd.bostrom.dev", "columbus-5") as bostrom:
             total_supply = await wallet.bank.total()
 
     uvloop.install() 

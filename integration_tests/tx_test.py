@@ -17,48 +17,44 @@ import lcd_ibc_transfer
 """
 
 
-from terra_sdk.client.lcd import LCDClient
-from terra_sdk.client.lcd.api.tx import CreateTxOptions, SignerOptions
+from cyber_sdk.client.lcd import LCDClient
+from cyber_sdk.client.lcd.api.tx import CreateTxOptions, SignerOptions
 
 # import lcd_tx
-from terra_sdk.client.localterra import LocalTerra
-from terra_sdk.core import Coin, Coins
-from terra_sdk.core.bank import MsgSend
-from terra_sdk.core.tx import SignMode
-from terra_sdk.key.key import SignOptions
-from terra_sdk.key.mnemonic import MnemonicKey
+from cyber_sdk.client.localbostrom import LocalBostrom
+from cyber_sdk.core import Coin, Coins
+from cyber_sdk.core.bank import MsgSend
+from cyber_sdk.core.tx import SignMode
+from cyber_sdk.key.key import SignOptions
+from cyber_sdk.key.mnemonic import MnemonicKey
 
 
 def main():
-    terra = LocalTerra()
-
-    seed = "quality vacuum heart guard buzz spike sight swarm shove special gym robust assume sudden deposit grid alcohol choice devote leader tilt noodle tide penalty"
-    key = MnemonicKey(mnemonic=seed)
+    bostrom = LCDClient(
+        url="https://lcd.space-pussy-1.cybernode.ai/",
+        chain_id="space-pussy-1",
+    )
+    key = MnemonicKey(
+        mnemonic='develop sail resist join lumber door door jelly apology trap note seek gentle bamboo enough concert exhibit disorder turn soul bullet cash debris wire'
+    )
+    test1 = bostrom.wallet(key=key)
 
     msg = MsgSend(
-        key.acc_address,
-        "terra1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v",
-        Coins(uluna=30000),
+        "bostrom1udal5nr3lz7mg7j7k79se4rz0tsjj8lur45q99",
+        "bostrom1hmkqhy8ygl6tnl5g8tc503rwrmmrkjcq3lduwj",
+        Coins(boot=1),
     )
-
-    tx_opt = CreateTxOptions(msgs=[msg], memo="send test", gas_adjustment=1.5)
-
-    signer_opt = SignerOptions(address=key.acc_address)
-
-    acc_info = terra.auth.account_info(key.acc_address)
-
-    sign_opt = SignOptions(
-        account_number=acc_info.account_number,
-        sequence=acc_info.sequence,
-        sign_mode=SignMode.SIGN_MODE_DIRECT,
-        chain_id="localterra",
+    print(msg)
+    tx = test1.create_and_sign_tx(
+        CreateTxOptions(
+            msgs=[msg],
+            gas_prices="0.1boot",
+            gas="80000",  # gas="auto", gas_adjustment=1.1
+        )
     )
+    print(tx)
 
-    tx = terra.tx.create([signer_opt], tx_opt)
-
-    signed_tx = key.sign_tx(tx, sign_opt)
-
-    result = terra.tx.broadcast(signed_tx)
+    result = bostrom.tx.broadcast(tx)
     print(result)
 
 

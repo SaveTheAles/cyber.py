@@ -1,4 +1,4 @@
-from terra_sdk.core.distribution import (
+from cyber_sdk.core.distribution import (
     MsgSetWithdrawAddress,
     MsgWithdrawDelegationReward,
     MsgWithdrawValidatorCommission,

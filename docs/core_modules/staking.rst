@@ -4,7 +4,7 @@ Staking
 API
 ---
 
-.. autoclass:: terra_sdk.client.lcd.api.staking.StakingAPI
+.. autoclass:: bostrom_sdk.client.lcd.api.staking.StakingAPI
     :members: 
 
 Data
@@ -13,18 +13,18 @@ Data
 Delegation
 ^^^^^^^^^^
 
-.. automodule:: terra_sdk.core.staking.data.delegation
+.. automodule:: bostrom_sdk.core.staking.data.delegation
     :members:
 
 Validator
 ^^^^^^^^^
 
-.. automodule:: terra_sdk.core.staking.data.validator
+.. automodule:: bostrom_sdk.core.staking.data.validator
     :members:
 
 
 Messages
 --------
 
-.. automodule:: terra_sdk.core.staking.msgs
+.. automodule:: bostrom_sdk.core.staking.msgs
     :members:

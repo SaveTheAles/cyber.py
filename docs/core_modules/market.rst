@@ -4,11 +4,11 @@ Market
 API
 ---
 
-.. autoclass:: terra_sdk.client.lcd.api.market.MarketAPI
+.. autoclass:: bostrom_sdk.client.lcd.api.market.MarketAPI
     :members: 
 
 Messages
 --------
 
-.. automodule:: terra_sdk.core.market.msgs
+.. automodule:: bostrom_sdk.core.market.msgs
     :members:

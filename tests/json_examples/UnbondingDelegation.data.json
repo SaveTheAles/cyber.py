@@ -1,6 +1,6 @@
 [{
-    "delegator_address": "terra1pm343vmezzlygs2wrsta99rp43s6ldqpy3e6pq",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom1pm343vmezzlygs2wrsta99rp43s6ldqpy3e6pq",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "654141",
       "completion_time": "2020-02-22T07:51:44.588143405Z",
@@ -9,8 +9,8 @@
     }]
   },
   {
-    "delegator_address": "terra1y2nfxqz62qacqmnttl35xyq8xxssaty5hhuvln",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom1y2nfxqz62qacqmnttl35xyq8xxssaty5hhuvln",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "697631",
       "completion_time": "2020-02-25T15:29:31.029151543Z",
@@ -19,8 +19,8 @@
     }]
   },
   {
-    "delegator_address": "terra19nc2fe65ech6wxvthhyey7dka959ph0z3uzcd4",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom19nc2fe65ech6wxvthhyey7dka959ph0z3uzcd4",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "666726",
       "completion_time": "2020-02-23T06:48:19.352817256Z",
@@ -29,8 +29,8 @@
     }]
   },
   {
-    "delegator_address": "terra186ym2wg09yxvneu4armqp4ceal8qake2d0lmal",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom186ym2wg09yxvneu4armqp4ceal8qake2d0lmal",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "525651",
       "completion_time": "2020-02-12T13:40:11.261470508Z",
@@ -39,8 +39,8 @@
     }]
   },
   {
-    "delegator_address": "terra1gxp6nsnf3vlscseyaq4a72laq06d527x26sp9a",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom1gxp6nsnf3vlscseyaq4a72laq06d527x26sp9a",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "525113",
       "completion_time": "2020-02-12T12:41:16.419429271Z",
@@ -49,8 +49,8 @@
     }]
   },
   {
-    "delegator_address": "terra12zhfxpwcpxq2sn6t0lv4yn465nzlhcuxh8gcaq",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom12zhfxpwcpxq2sn6t0lv4yn465nzlhcuxh8gcaq",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "677640",
       "completion_time": "2020-02-24T02:47:55.436396738Z",
@@ -59,8 +59,8 @@
     }]
   },
   {
-    "delegator_address": "terra1dwzf82lee8ww3vxxd3v5vdygsuagvne5tss6az",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom1dwzf82lee8ww3vxxd3v5vdygsuagvne5tss6az",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "678098",
       "completion_time": "2020-02-24T03:38:14.566561155Z",
@@ -69,8 +69,8 @@
     }]
   },
   {
-    "delegator_address": "terra10zpcjhzwv32mfyll9yr4xlj0fr2jz0lt37yppr",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom10zpcjhzwv32mfyll9yr4xlj0fr2jz0lt37yppr",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "610372",
       "completion_time": "2020-02-19T00:04:32.170430584Z",
@@ -79,8 +79,8 @@
     }]
   },
   {
-    "delegator_address": "terra1396z0lq2wdqllsgjtr5g5cxugext6hvag32aty",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom1396z0lq2wdqllsgjtr5g5cxugext6hvag32aty",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "644891",
       "completion_time": "2020-02-21T15:01:27.690471036Z",
@@ -89,8 +89,8 @@
     }]
   },
   {
-    "delegator_address": "terra1jklavkl3q7mkmxnwjfy2kl8zsf2596h55mkfgw",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom1jklavkl3q7mkmxnwjfy2kl8zsf2596h55mkfgw",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "703443",
       "completion_time": "2020-02-26T02:09:52.488520686Z",
@@ -99,8 +99,8 @@
     }]
   },
   {
-    "delegator_address": "terra1nrqjxjtnytwsuet863l9yh2w07z4sm5xxsnue4",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom1nrqjxjtnytwsuet863l9yh2w07z4sm5xxsnue4",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "638493",
       "completion_time": "2020-02-21T03:20:29.646228752Z",
@@ -109,8 +109,8 @@
     }]
   },
   {
-    "delegator_address": "terra1nywja8qykzgcva579tyuarglyv9dc75y8cyw3f",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom1nywja8qykzgcva579tyuarglyv9dc75y8cyw3f",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "588230",
       "completion_time": "2020-02-17T07:41:45.552615588Z",
@@ -119,8 +119,8 @@
     }]
   },
   {
-    "delegator_address": "terra1nn2zkrnpl3mjjmay7v39mlw8sw8cw0gjpfnvwp",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom1nn2zkrnpl3mjjmay7v39mlw8sw8cw0gjpfnvwp",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "440881",
       "completion_time": "2020-02-06T02:33:31.700939822Z",
@@ -129,8 +129,8 @@
     }]
   },
   {
-    "delegator_address": "terra14ss0rj0yt0784cdpjt9jjdnur6uqvktyn9grj3",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom14ss0rj0yt0784cdpjt9jjdnur6uqvktyn9grj3",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "618277",
       "completion_time": "2020-02-19T14:29:13.700145654Z",
@@ -139,8 +139,8 @@
     }]
   },
   {
-    "delegator_address": "terra1mcgyqe0amn3x5vquf2pf9q9zpuknu7904jt5zr",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom1mcgyqe0amn3x5vquf2pf9q9zpuknu7904jt5zr",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "623351",
       "completion_time": "2020-02-19T23:42:56.021990965Z",
@@ -149,8 +149,8 @@
     }]
   },
   {
-    "delegator_address": "terra1a9njz6dt4d79xtvau6696ffjetde74kave6vma",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom1a9njz6dt4d79xtvau6696ffjetde74kave6vma",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "653201",
       "completion_time": "2020-02-22T06:08:43.801110462Z",
@@ -159,8 +159,8 @@
     }]
   },
   {
-    "delegator_address": "terra1awjkcd3nyqp7wy9x3sffvkl6xesurhrhjvak4e",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom1awjkcd3nyqp7wy9x3sffvkl6xesurhrhjvak4e",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "705495",
       "completion_time": "2020-02-26T05:56:51.232242548Z",
@@ -169,8 +169,8 @@
     }]
   },
   {
-    "delegator_address": "terra17l9ssdnh0amp8h76pf9qv8qh46p55dsfcex2d4",
-    "validator_address": "terravaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
+    "delegator_address": "bostrom17l9ssdnh0amp8h76pf9qv8qh46p55dsfcex2d4",
+    "validator_address": "bostromvaloper1p54hc4yy2ajg67j645dn73w3378j6k05vmx9r9",
     "entries": [{
       "creation_height": "506819",
       "completion_time": "2020-02-11T03:20:08.649853985Z",
@@ -179,8 +179,8 @@
     }]
   },
   {
-    "delegator_address": "terra1qdh2jaxgjx2cafd6t2latl8mx656sayufrpz3n",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1qdh2jaxgjx2cafd6t2latl8mx656sayufrpz3n",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "711876",
       "completion_time": "2020-02-26T17:48:34.962923533Z",
@@ -189,8 +189,8 @@
     }]
   },
   {
-    "delegator_address": "terra1p0l6mn53hv2pjurxaljsdkht79fx8fj4nzxzxv",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1p0l6mn53hv2pjurxaljsdkht79fx8fj4nzxzxv",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "612228",
       "completion_time": "2020-02-19T03:27:28.043402752Z",
@@ -199,8 +199,8 @@
     }]
   },
   {
-    "delegator_address": "terra1phce3fl0awwupa8xx7tzz503ek7qkvlylhdlsu",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1phce3fl0awwupa8xx7tzz503ek7qkvlylhdlsu",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "707180",
       "completion_time": "2020-02-26T09:03:53.526246695Z",
@@ -209,8 +209,8 @@
     }]
   },
   {
-    "delegator_address": "terra1y9fm7lt8h6pzz554p232txf58kxf57t869n9t8",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1y9fm7lt8h6pzz554p232txf58kxf57t869n9t8",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
         "creation_height": "627654",
         "completion_time": "2020-02-20T07:34:03.548971774Z",
@@ -226,8 +226,8 @@
     ]
   },
   {
-    "delegator_address": "terra1x0ur6k428f6ssjht2ukl84nu6urj847zxz23fa",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1x0ur6k428f6ssjht2ukl84nu6urj847zxz23fa",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "631181",
       "completion_time": "2020-02-20T14:00:46.972524298Z",
@@ -236,8 +236,8 @@
     }]
   },
   {
-    "delegator_address": "terra18nmvxp6wdnehpgykf9tydu8ta5ja7h6dnduy26",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom18nmvxp6wdnehpgykf9tydu8ta5ja7h6dnduy26",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "678275",
       "completion_time": "2020-02-24T03:57:39.032204406Z",
@@ -246,8 +246,8 @@
     }]
   },
   {
-    "delegator_address": "terra1gwsn3fwxf0qwmpda7ujjdzsxj5a446rgwwntl3",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1gwsn3fwxf0qwmpda7ujjdzsxj5a446rgwwntl3",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
         "creation_height": "679756",
         "completion_time": "2020-02-24T06:40:32.738424444Z",
@@ -269,8 +269,8 @@
     ]
   },
   {
-    "delegator_address": "terra1tade8upa07knrt9ekm30nve64945ufm720h8yx",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1tade8upa07knrt9ekm30nve64945ufm720h8yx",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "460747",
       "completion_time": "2020-02-07T15:11:34.063216417Z",
@@ -279,8 +279,8 @@
     }]
   },
   {
-    "delegator_address": "terra1396z0lq2wdqllsgjtr5g5cxugext6hvag32aty",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1396z0lq2wdqllsgjtr5g5cxugext6hvag32aty",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "644903",
       "completion_time": "2020-02-21T15:02:46.010103823Z",
@@ -289,8 +289,8 @@
     }]
   },
   {
-    "delegator_address": "terra13wypeqx6a04g5sh0l23qnmz2mll0tnjc3a3ds0",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom13wypeqx6a04g5sh0l23qnmz2mll0tnjc3a3ds0",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "666265",
       "completion_time": "2020-02-23T05:57:39.528010756Z",
@@ -299,8 +299,8 @@
     }]
   },
   {
-    "delegator_address": "terra1j3wp888ldups4fjk2s2allne2yh5lwf7et9es0",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1j3wp888ldups4fjk2s2allne2yh5lwf7et9es0",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "584495",
       "completion_time": "2020-02-17T00:52:29.8037687Z",
@@ -309,8 +309,8 @@
     }]
   },
   {
-    "delegator_address": "terra15av7nrj3n83f6kvss2xdhcemsf7gcdh9jnuz20",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom15av7nrj3n83f6kvss2xdhcemsf7gcdh9jnuz20",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "619311",
       "completion_time": "2020-02-19T16:22:28.690186599Z",
@@ -319,8 +319,8 @@
     }]
   },
   {
-    "delegator_address": "terra1kfmsrfup8dzl6vlxsfn3v0g6mcx496rndtaa6a",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1kfmsrfup8dzl6vlxsfn3v0g6mcx496rndtaa6a",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
         "creation_height": "678304",
         "completion_time": "2020-02-24T04:00:50.274454554Z",
@@ -342,8 +342,8 @@
     ]
   },
   {
-    "delegator_address": "terra1hxutcl8nlhkze3leu4tkqpz6qm4qcyenhkjk8r",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1hxutcl8nlhkze3leu4tkqpz6qm4qcyenhkjk8r",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "645597",
       "completion_time": "2020-02-21T16:18:46.742640918Z",
@@ -352,8 +352,8 @@
     }]
   },
   {
-    "delegator_address": "terra1c2aqpxs9k2h53z34vgzn9wwdeuz6ldj467fs58",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1c2aqpxs9k2h53z34vgzn9wwdeuz6ldj467fs58",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "706259",
       "completion_time": "2020-02-26T07:21:39.1885656Z",
@@ -362,8 +362,8 @@
     }]
   },
   {
-    "delegator_address": "terra1cwxlwd5lmw5vf6yqpfyw90qqn0x52q8lgcfxpj",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1cwxlwd5lmw5vf6yqpfyw90qqn0x52q8lgcfxpj",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "513902",
       "completion_time": "2020-02-11T16:16:10.755958676Z",
@@ -372,8 +372,8 @@
     }]
   },
   {
-    "delegator_address": "terra1e0cnvq2m3t2n7hqrtmadheen2hjvjglght8e0u",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1e0cnvq2m3t2n7hqrtmadheen2hjvjglght8e0u",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
         "creation_height": "460517",
         "completion_time": "2020-02-07T14:46:24.464085333Z",
@@ -389,8 +389,8 @@
     ]
   },
   {
-    "delegator_address": "terra1e5ncelsh4qhqt3s97vn43hxlhmt7zd43yszdnf",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1e5ncelsh4qhqt3s97vn43hxlhmt7zd43yszdnf",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "479400",
       "completion_time": "2020-02-09T01:13:33.188764495Z",
@@ -399,8 +399,8 @@
     }]
   },
   {
-    "delegator_address": "terra1mcgyqe0amn3x5vquf2pf9q9zpuknu7904jt5zr",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1mcgyqe0amn3x5vquf2pf9q9zpuknu7904jt5zr",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "623345",
       "completion_time": "2020-02-19T23:42:16.364403143Z",
@@ -409,8 +409,8 @@
     }]
   },
   {
-    "delegator_address": "terra1a9njz6dt4d79xtvau6696ffjetde74kave6vma",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1a9njz6dt4d79xtvau6696ffjetde74kave6vma",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "653196",
       "completion_time": "2020-02-22T06:08:11.482959217Z",
@@ -419,8 +419,8 @@
     }]
   },
   {
-    "delegator_address": "terra17fqhjf4xzn03ygdjaf8m7zmdeug09ttpexeuyv",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom17fqhjf4xzn03ygdjaf8m7zmdeug09ttpexeuyv",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "584147",
       "completion_time": "2020-02-17T00:14:27.681878913Z",
@@ -429,8 +429,8 @@
     }]
   },
   {
-    "delegator_address": "terra1lsjc8870ky0f0s6qh2h6emk67fv4kfzsn2whnh",
-    "validator_address": "terravaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
+    "delegator_address": "bostrom1lsjc8870ky0f0s6qh2h6emk67fv4kfzsn2whnh",
+    "validator_address": "bostromvaloper15zcjduavxc5mkp8qcqs9eyhwlqwdlrzy6jln3m",
     "entries": [{
       "creation_height": "710404",
       "completion_time": "2020-02-26T15:04:01.294405733Z",

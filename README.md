@@ -1,31 +1,31 @@
 <br/>
 <br/>
 
-<div  align="center"> <p > <img src="https://raw.githubusercontent.com/terra-money/terra-sdk-python/main/docs/img/logo.png" width=500 alt="py-sdk-logo"></p>
+<div  align="center"> <p > <img src="https://raw.githubusercontent.com/bostrom-money/bostrom-sdk-python/main/docs/img/logo.png" width=500 alt="py-sdk-logo"></p>
 
-The Python SDK for Terra
+The Python SDK for Bostrom
 <br/>
-<p><sub>(Unfamiliar with Terra?  <a href="https://docs.terra.money/">Check out the Terra Docs</a>)</sub></p>
+<p><sub>(Unfamiliar with Bostrom?  <a href="https://docs.bostrom.money/">Check out the Bostrom Docs</a>)</sub></p>
 
-  <p > <img alt="GitHub" src="https://img.shields.io/github/license/terra-money/terra-sdk-python">
-<img alt="Python" src="https://img.shields.io/pypi/pyversions/terra-sdk">
-  <img alt="pip" src="https://img.shields.io/pypi/v/terra-sdk"></p>
+  <p > <img alt="GitHub" src="https://img.shields.io/github/license/bostrom-money/bostrom-sdk-python">
+<img alt="Python" src="https://img.shields.io/pypi/pyversions/bostrom-sdk">
+  <img alt="pip" src="https://img.shields.io/pypi/v/bostrom-sdk"></p>
 <p>
-  <a href="https://terra-money.github.io/terra.py/index.html"><strong>Explore the Docs »</strong></a>
+  <a href="https://bostrom-money.github.io/bostrom.py/index.html"><strong>Explore the Docs »</strong></a>
 <br/>
-  <a href="https://pypi.org/project/terra-sdk/">PyPI Package</a>
+  <a href="https://pypi.org/project/bostrom-sdk/">PyPI Package</a>
   ·
-  <a href="https://github.com/terra-money/terra.py">GitHub Repository</a>
+  <a href="https://github.com/bostrom-money/bostrom.py">GitHub Repository</a>
 </p></div>
 
 
-The Terra Software Development Kit (SDK) in Python is a simple library toolkit for building software that can interact with the Terra blockchain and provides simple abstractions over core data structures, serialization, key management, and API request generation.
+The Bostrom Software Development Kit (SDK) in Python is a simple library toolkit for building software that can interact with the Bostrom blockchain and provides simple abstractions over core data structures, serialization, key management, and API request generation.
 
 ## Features
 
 - Written in Python with extensive support libraries
 - Versatile support for key management solutions
-- Exposes the Terra API through LCDClient
+- Exposes the Bostrom API through LCDClient
 
 <br/>
 
@@ -54,29 +54,29 @@ The Terra Software Development Kit (SDK) in Python is a simple library toolkit f
 
 
 # API Reference
-An intricate reference to the APIs on the Terra SDK can be found <a href="https://terra-money.github.io/terra.py/index.html">here</a>.
+An intricate reference to the APIs on the Bostrom SDK can be found <a href="https://bostrom-money.github.io/bostrom.py/index.html">here</a>.
 
 <br/>
 
 # Getting Started
-A walk-through of the steps to get started with the Terra SDK alongside a few use case examples are provided below. Alternatively, a tutorial video is also available <a href="https://www.youtube.com/watch?v=GfasBlJHKIg">here</a> as reference.
+A walk-through of the steps to get started with the Bostrom SDK alongside a few use case examples are provided below. Alternatively, a tutorial video is also available <a href="https://www.youtube.com/watch?v=GfasBlJHKIg">here</a> as reference.
 
 ## Requirements
-Terra SDK requires <a href="https://www.python.org/downloads/">Python v3.7+</a>.
+Bostrom SDK requires <a href="https://www.python.org/downloads/">Python v3.7+</a>.
 
 ## Installation
 
 <sub>**NOTE:** *All code starting with a `$` is meant to run on your terminal (a bash prompt). All code starting with a `>>>` is meant to run in a python interpreter, like <a href="https://pypi.org/project/ipython/">ipython</a>.*</sub>
 
-Terra SDK can be installed (preferably in a `virtual environment` from PyPI using `pip`) as follows:
+Bostrom SDK can be installed (preferably in a `virtual environment` from PyPI using `pip`) as follows:
 
 ```
-$ pip install -U terra_sdk
+$ pip install -U bostrom_sdk
 ```
 <sub>*You might have `pip3` installed instead of `pip`; proceed according to your own setup.*<sub>
 
 ## Dependencies
-Terra SDK uses <a href="https://python-poetry.org/">Poetry</a> to manage dependencies. To get set up with all the required dependencies, run:
+Bostrom SDK uses <a href="https://python-poetry.org/">Poetry</a> to manage dependencies. To get set up with all the required dependencies, run:
 ```
 $ pip install poetry
 $ poetry install
@@ -84,13 +84,13 @@ $ poetry install
 
 
 ## Tests
-Terra SDK provides extensive tests for data classes and functions. To run them, after the steps in [Dependencies](#dependencies):
+Bostrom SDK provides extensive tests for data classes and functions. To run them, after the steps in [Dependencies](#dependencies):
 ```
 $ make test
 ```
 
 ## Code Quality
-Terra SDK uses <a href="https://black.readthedocs.io/en/stable/">Black</a>, <a href="https://isort.readthedocs.io/en/latest/">isort</a>, and <a href="https://mypy.readthedocs.io/en/stable/index.html">Mypy</a> for checking code quality and maintaining style. To reformat, after the steps in [Dependencies](#dependencies):
+Bostrom SDK uses <a href="https://black.readthedocs.io/en/stable/">Black</a>, <a href="https://isort.readthedocs.io/en/latest/">isort</a>, and <a href="https://mypy.readthedocs.io/en/stable/index.html">Mypy</a> for checking code quality and maintaining style. To reformat, after the steps in [Dependencies](#dependencies):
 ```
 $ make qa && make format
 ```
@@ -98,23 +98,23 @@ $ make qa && make format
 <br/>
 
 # Usage Examples
-Terra SDK can help you read block data, sign and send transactions, deploy and interact with contracts, and many more.
-The following examples are provided to help you get started. Use cases and functionalities of the Terra SDK are not limited to the following examples and can be found in full <a href="https://terra-money.github.io/terra.py/index.html">here</a>.
+Bostrom SDK can help you read block data, sign and send transactions, deploy and interact with contracts, and many more.
+The following examples are provided to help you get started. Use cases and functionalities of the Bostrom SDK are not limited to the following examples and can be found in full <a href="https://bostrom-money.github.io/bostrom.py/index.html">here</a>.
 
-In order to interact with the Terra blockchain, you'll need a connection to a Terra node. This can be done through setting up an LCDClient (The LCDClient is an object representing an HTTP connection to a Terra LCD node.):
+In order to interact with the Bostrom blockchain, you'll need a connection to a Bostrom node. This can be done through setting up an LCDClient (The LCDClient is an object representing an HTTP connection to a Bostrom LCD node.):
 
 ```
->>> from terra_sdk.client.lcd import LCDClient
->>> terra = LCDClient(chain_id="columbus-5", url="https://lcd.terra.dev")
+>>> from bostrom_sdk.client.lcd import LCDClient
+>>> bostrom = LCDClient(chain_id="space-pussy-1", url="https://lcd.space-pussy-1.cybernode.ai/")
 ```
 
 ## Getting Blockchain Information
 
-Once properly configured, the `LCDClient` instance will allow you to interact with the Terra blockchain. Try getting the latest block height:
+Once properly configured, the `LCDClient` instance will allow you to interact with the Bostrom blockchain. Try getting the latest block height:
 
 
 ```
->>> terra.tendermint.block_info()['block']['header']['height']
+>>> bostrom.tendermint.block_info()['block']['header']['height']
 ```
 
 `'1687543'`
@@ -126,21 +126,21 @@ If you want to make asynchronous, non-blocking LCD requests, you can use AsyncLC
 
 <pre><code>
 >>> import asyncio 
->>> from terra_sdk.client.lcd import AsyncLCDClient
+>>> from bostrom_sdk.client.lcd import AsyncLCDClient
 
 >>> async def main():
-      <strong>terra = AsyncLCDClient("https://lcd.terra.dev", "columbus-5")</strong>
-      total_supply = await terra.bank.total()
+      <strong>bostrom = AsyncLCDClient("https://lcd.bostrom.dev", "columbus-5")</strong>
+      total_supply = await bostrom.bank.total()
       print(total_supply)
-      <strong>await terra.session.close # you must close the session</strong>
+      <strong>await bostrom.session.close # you must close the session</strong>
 
 >>> asyncio.get_event_loop().run_until_complete(main())
 </code></pre>
 
 ## Building and Signing Transactions
 
-If you wish to perform a state-changing operation on the Terra blockchain such as sending tokens, swapping assets, withdrawing rewards, or even invoking functions on smart contracts, you must create a **transaction** and broadcast it to the network.
-Terra SDK provides functions that help create StdTx objects.
+If you wish to perform a state-changing operation on the Bostrom blockchain such as sending tokens, swapping assets, withdrawing rewards, or even invoking functions on smart contracts, you must create a **transaction** and broadcast it to the network.
+Bostrom SDK provides functions that help create StdTx objects.
 
 ### Example Using a Wallet (*recommended*)
 
@@ -150,37 +150,37 @@ Use `LCDClient.wallet()` to create a Wallet from any Key instance. The Key provi
 
 
 ```
->>> from terra_sdk.client.lcd import LCDClient
->>> from terra_sdk.key.mnemonic import MnemonicKey
+>>> from bostrom_sdk.client.lcd import LCDClient
+>>> from bostrom_sdk.key.mnemonic import MnemonicKey
 
 >>> mk = MnemonicKey(mnemonic=MNEMONIC) 
->>> terra = LCDClient("https://lcd.terra.dev", "columbus-5")
->>> wallet = terra.wallet(mk)
+>>> bostrom = LCDClient("https://lcd.bostrom.dev", "columbus-5")
+>>> wallet = bostrom.wallet(mk)
 ```
 
 Once you have your Wallet, you can simply create a StdTx using `Wallet.create_and_sign_tx`.
 
 
 ```
->>> from terra_sdk.core.auth import Fee
->>> from terra_sdk.core.bank import MsgSend
->>> from terra_sdk.client.lcd.api.tx import CreateTxOptions
+>>> from bostrom_sdk.core.auth import Fee
+>>> from bostrom_sdk.core.bank import MsgSend
+>>> from bostrom_sdk.client.lcd.api.tx import CreateTxOptions
 
 >>> tx = wallet.create_and_sign_tx(CreateTxOptions(
         msgs=[MsgSend(
             wallet.key.acc_address,
             RECIPIENT,
-            "1000000uluna"    # send 1 luna
+            "1000000boot"    # send 1 luna
         )],
         memo="test transaction!",
-        fee=Fee(200000, "120000uluna")
+        fee=Fee(200000, "120000boot")
     ))
 ```
 
 You should now be able to broadcast your transaction to the network.
 
 ```
->>> result = terra.tx.broadcast(tx)
+>>> result = bostrom.tx.broadcast(tx)
 >>> print(result)
 ```
 
@@ -193,8 +193,8 @@ Community contribution, whether it's a new feature, correction, bug report, addi
 <br/>
 
 ## Reporting an Issue 
-First things first: **Do NOT report security vulnerabilities in public issues!** Please disclose responsibly by submitting your findings to the [Terra Bugcrowd submission form](https://www.terra.money/bugcrowd). The issue will be assessed as soon as possible. 
-If you encounter a different issue with the Python SDK, check first to see if there is an existing issue on the <a href="https://github.com/terra-money/terra-sdk-python/issues">Issues</a> page, or if there is a pull request on the <a href="https://github.com/terra-money/terra-sdk-python/pulls">Pull requests</a> page. Be sure to check both the Open and Closed tabs addressing the issue. 
+First things first: **Do NOT report security vulnerabilities in public issues!** Please disclose responsibly by submitting your findings to the [Bostrom Bugcrowd submission form](https://www.bostrom.money/bugcrowd). The issue will be assessed as soon as possible. 
+If you encounter a different issue with the Python SDK, check first to see if there is an existing issue on the <a href="https://github.com/bostrom-money/bostrom-sdk-python/issues">Issues</a> page, or if there is a pull request on the <a href="https://github.com/bostrom-money/bostrom-sdk-python/pulls">Pull requests</a> page. Be sure to check both the Open and Closed tabs addressing the issue. 
 
 If there isn't a discussion on the topic there, you can file an issue. The ideal report includes:
 
@@ -202,13 +202,13 @@ If there isn't a discussion on the topic there, you can file an issue. The ideal
 * How to recreate the bug.
 * If relevant, including the versions of your:
     * Python interpreter
-    * Terra SDK
+    * Bostrom SDK
     * Optionally of the other dependencies involved
 * If possible, create a pull request with a (failing) test case demonstrating what's wrong. This makes the process for fixing bugs quicker & gets issues resolved sooner.
 </br>
 
 ## Requesting a Feature
-If you wish to request the addition of a feature, please first check out the <a href="https://github.com/terra-money/terra-sdk-python/issues">Issues</a> page and the <a href="https://github.com/terra-money/terra-sdk-python/pulls">Pull requests</a> page (both Open and Closed tabs). If you decide to continue with the request, think of the merits of the feature to convince the project's developers, and provide as much detail and context as possible in the form of filing an issue on the <a href="https://github.com/terra-money/terra-sdk-python/issues">Issues</a> page.
+If you wish to request the addition of a feature, please first check out the <a href="https://github.com/bostrom-money/bostrom-sdk-python/issues">Issues</a> page and the <a href="https://github.com/bostrom-money/bostrom-sdk-python/pulls">Pull requests</a> page (both Open and Closed tabs). If you decide to continue with the request, think of the merits of the feature to convince the project's developers, and provide as much detail and context as possible in the form of filing an issue on the <a href="https://github.com/bostrom-money/bostrom-sdk-python/issues">Issues</a> page.
 
 
 <br/>
@@ -254,13 +254,13 @@ You can give this <a href="https://opensource.guide/how-to-contribute/#how-to-su
 
 This software is licensed under the MIT license. See [LICENSE](./LICENSE) for full disclosure.
 
-© 2021 Terraform Labs, PTE.
+© 2021 Bostromform Labs, PTE.
 
 <hr/>
 
 <p>&nbsp;</p>
 <p align="center">
-    <a href="https://terra.money/"><img src="https://assets.website-files.com/611153e7af981472d8da199c/61794f2b6b1c7a1cb9444489_symbol-terra-blue.svg" alt="Terra-logo" width=200/></a>
+    <a href="https://bostrom.money/"><img src="https://assets.website-files.com/611153e7af981472d8da199c/61794f2b6b1c7a1cb9444489_symbol-bostrom-blue.svg" alt="Bostrom-logo" width=200/></a>
 <div align="center">
   <sub><em>Powering the innovation of money.</em></sub>
 </div>

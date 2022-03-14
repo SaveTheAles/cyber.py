@@ -4,5 +4,5 @@ Mint
 API
 ---
 
-.. autoclass:: terra_sdk.client.lcd.api.mint.MintAPI
+.. autoclass:: bostrom_sdk.client.lcd.api.mint.MintAPI
     :members: 

@@ -8,7 +8,7 @@ they take a type like :class:`AccAddress` where one may expect a ``str``. It is 
 type alias annotation (equivalent to ``str``) that serves only to remind the developer
 which format the string is expected to be in. 
 
-Terra SDK also provides useful functions for checking and converting **addresses** and **pubkeys**.
+Bostrom SDK also provides useful functions for checking and converting **addresses** and **pubkeys**.
 
 Addresses
 ---------
@@ -16,22 +16,22 @@ Addresses
 AccAddress
 ^^^^^^^^^^
 
-.. autoclass:: terra_sdk.core.bech32.AccAddress
+.. autoclass:: bostrom_sdk.core.bech32.AccAddress
     :members:
 
-.. autofunction:: terra_sdk.core.bech32.is_acc_address
+.. autofunction:: bostrom_sdk.core.bech32.is_acc_address
 
-.. autofunction:: terra_sdk.core.bech32.to_acc_address
+.. autofunction:: bostrom_sdk.core.bech32.to_acc_address
 
 ValAddress
 ^^^^^^^^^^
 
-.. autoclass:: terra_sdk.core.bech32.ValAddress
+.. autoclass:: bostrom_sdk.core.bech32.ValAddress
     :members:
 
-.. autofunction:: terra_sdk.core.bech32.is_val_address
+.. autofunction:: bostrom_sdk.core.bech32.is_val_address
 
-.. autofunction:: terra_sdk.core.bech32.to_val_address
+.. autofunction:: bostrom_sdk.core.bech32.to_val_address
 
 
 
@@ -41,20 +41,20 @@ PubKeys
 AccPubKey
 ^^^^^^^^^
 
-.. autoclass:: terra_sdk.core.bech32.AccPubKey
+.. autoclass:: bostrom_sdk.core.bech32.AccPubKey
     :members:
 
-.. autofunction:: terra_sdk.core.bech32.is_acc_pubkey
+.. autofunction:: bostrom_sdk.core.bech32.is_acc_pubkey
 
-.. autofunction:: terra_sdk.core.bech32.to_acc_pubkey
+.. autofunction:: bostrom_sdk.core.bech32.to_acc_pubkey
 
 ValPubKey
 ^^^^^^^^^
 
-.. autoclass:: terra_sdk.core.bech32.ValPubKey
+.. autoclass:: bostrom_sdk.core.bech32.ValPubKey
     :members:
 
-.. autofunction:: terra_sdk.core.bech32.is_acc_pubkey
+.. autofunction:: bostrom_sdk.core.bech32.is_acc_pubkey
 
-.. autofunction:: terra_sdk.core.bech32.to_acc_pubkey
+.. autofunction:: bostrom_sdk.core.bech32.to_acc_pubkey
 
