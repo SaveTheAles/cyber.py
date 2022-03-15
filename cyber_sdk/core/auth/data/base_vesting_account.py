@@ -35,7 +35,7 @@ class BaseVestingAccount(JSONSerializable):
     """"""
 
     type_amino = "core/BaseVestingAccount"
-    type_url = "/bostrom.vesting.v1beta1.BaseVestingAccount"
+    type_url = "/cosmos.vesting.v1beta1.BaseVestingAccount"
 
     def get_sequence(self) -> int:
         return self.base_account.get_sequence()
