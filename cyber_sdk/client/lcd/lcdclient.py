@@ -26,6 +26,7 @@ from .api.ibc_transfer import AsyncIbcTransferAPI, IbcTransferAPI
 from .api.market import AsyncMarketAPI, MarketAPI
 from .api.mint import AsyncMintAPI, MintAPI
 from .api.oracle import AsyncOracleAPI, OracleAPI
+from .api.rank import AsyncRankAPI, RankAPI
 from .api.slashing import AsyncSlashingAPI, SlashingAPI
 from .api.staking import AsyncStakingAPI, StakingAPI
 from .api.tendermint import AsyncTendermintAPI, TendermintAPI
@@ -84,6 +85,7 @@ class AsyncLCDClient:
         self.mint = AsyncMintAPI(self)
         self.authz = AsyncAuthzAPI(self)
         self.oracle = AsyncOracleAPI(self)
+        self.rank = AsyncRankAPI(self)
         self.slashing = AsyncSlashingAPI(self)
         self.staking = AsyncStakingAPI(self)
         self.tendermint = AsyncTendermintAPI(self)
@@ -215,6 +217,9 @@ class LCDClient(AsyncLCDClient):
     gov: GovAPI
     """:class:`GovAPI<cyber_sdk.client.lcd.api.gov.GovAPI>`."""
 
+    graph: GraphAPI
+    """:class:`GraphAPI<cyber_sdk.client.lcd.api.graph.GraphAPI>`."""
+
     feegrant: FeeGrantAPI
     """:class:`FeeGrant<cyber_sdk.client.lcd.api.feegrant.FeeGrantAPI>`."""
 
@@ -229,6 +234,9 @@ class LCDClient(AsyncLCDClient):
 
     oracle: OracleAPI
     """:class:`OracleAPI<cyber_sdk.client.lcd.api.oracle.OracleAPI>`."""
+
+    rank: RankAPI
+    """:class:`RankAPI<cyber_sdk.client.lcd.api.rank.RankAPI>`."""
 
     slashing: SlashingAPI
     """:class:`SlashingAPI<cyber_sdk.client.lcd.api.slashing.SlashingAPI>`."""
@@ -280,6 +288,7 @@ class LCDClient(AsyncLCDClient):
         self.mint = MintAPI(self)
         self.authz = AuthzAPI(self)
         self.oracle = OracleAPI(self)
+        self.rank = RankAPI(self)
         self.slashing = SlashingAPI(self)
         self.staking = StakingAPI(self)
         self.tendermint = TendermintAPI(self)
