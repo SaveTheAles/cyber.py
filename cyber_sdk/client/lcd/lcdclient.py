@@ -20,6 +20,7 @@ from .api.bank import AsyncBankAPI, BankAPI
 from .api.distribution import AsyncDistributionAPI, DistributionAPI
 from .api.feegrant import AsyncFeeGrantAPI, FeeGrantAPI
 from .api.gov import AsyncGovAPI, GovAPI
+from .api.graph import AsyncGraphAPI, GraphAPI
 from .api.ibc import AsyncIbcAPI, IbcAPI
 from .api.ibc_transfer import AsyncIbcTransferAPI, IbcTransferAPI
 from .api.market import AsyncMarketAPI, MarketAPI
@@ -78,6 +79,7 @@ class AsyncLCDClient:
         self.distribution = AsyncDistributionAPI(self)
         self.feegrant = AsyncFeeGrantAPI(self)
         self.gov = AsyncGovAPI(self)
+        self.graph = AsyncGraphAPI(self)
         self.market = AsyncMarketAPI(self)
         self.mint = AsyncMintAPI(self)
         self.authz = AsyncAuthzAPI(self)
@@ -272,6 +274,7 @@ class LCDClient(AsyncLCDClient):
         self.bank = BankAPI(self)
         self.distribution = DistributionAPI(self)
         self.gov = GovAPI(self)
+        self.graph = GraphAPI(self)
         self.feegrant = FeeGrantAPI(self)
         self.market = MarketAPI(self)
         self.mint = MintAPI(self)
