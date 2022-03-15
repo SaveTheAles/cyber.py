@@ -1,20 +1,17 @@
-"""Bank module message types."""
+"""Graph module message types."""
 
 from __future__ import annotations
 
-from typing import Any, List
+from typing import Any
 
-from cyber_proto.cosmos.bank.v1beta1 import Input as Input_pb
-from cyber_proto.cosmos.bank.v1beta1 import MsgMultiSend as MsgMultiSend_pb
-from cyber_proto.cosmos.bank.v1beta1 import MsgSend as MsgSend_pb
-from cyber_proto.cosmos.bank.v1beta1 import Output as Output_pb
+
 from cyber_proto.cyber.graph.v1beta1 import MsgCyberlink as MsgCyberlink_pb
 from cyber_proto.cyber.graph.v1beta1 import Link as Link_pb
 
-from cyber_sdk.core import AccAddress, Coins
+from cyber_sdk.core import AccAddress
 from cyber_sdk.core.msg import Msg
-from cyber_sdk.util.json import JSONSerializable
 
+# TODO: add linkchain. Refactor to/from methods
 __all__ = ["MsgCyberlink"]
 
 import attr
@@ -55,7 +52,8 @@ class MsgCyberlink(Msg):
     def from_data(cls, data: dict) -> MsgCyberlink:
         return cls(
             neuron=data["neuron"],
-            links=data["links"]
+            object_from=data["object_from"],
+            object_to=data["object_to"],
         )
 
     def to_data(self) -> dict:
@@ -69,7 +67,8 @@ class MsgCyberlink(Msg):
     def from_proto(cls, proto: MsgCyberlink_pb) -> MsgCyberlink:
         return cls(
             neuron=proto["neuron"],
-            links=proto["links"]
+            object_from=proto["object_from"],
+            object_to=proto["object_to"],
         )
 
     def to_proto(self) -> MsgCyberlink_pb:

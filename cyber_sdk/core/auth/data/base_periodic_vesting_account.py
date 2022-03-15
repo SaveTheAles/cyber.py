@@ -74,7 +74,6 @@ class BasePeriodicVestingAccount(JSONSerializable):
 
     @classmethod
     def from_data(cls, data: dict) -> BasePeriodicVestingAccount:
-        print(data)
         data = data['base_vesting_account']['base_account']
         return cls(
             address=data["address"],
