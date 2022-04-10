@@ -54,29 +54,29 @@ The Bostrom Software Development Kit (SDK) in Python is a simple library toolkit
 
 
 # API Reference
-An intricate reference to the APIs on the Bostrom SDK can be found <a href="https://bostrom-money.github.io/bostrom.py/index.html">here</a>.
+An intricate reference to the APIs on the Cyber SDK can be found <a href="https://savetheales.github.io/cyber.py/index.html">here</a>.
 
 <br/>
 
 # Getting Started
-A walk-through of the steps to get started with the Bostrom SDK alongside a few use case examples are provided below. Alternatively, a tutorial video is also available <a href="https://www.youtube.com/watch?v=GfasBlJHKIg">here</a> as reference.
+A walk-through of the steps to get started with the Cyber SDK alongside a few use case examples are provided below. Alternatively, a tutorial video is also available <a href="https://www.youtube.com/watch?v=GfasBlJHKIg">here</a> as reference.
 
 ## Requirements
-Bostrom SDK requires <a href="https://www.python.org/downloads/">Python v3.7+</a>.
+Cyber SDK requires <a href="https://www.python.org/downloads/">Python v3.7+</a>.
 
 ## Installation
 
 <sub>**NOTE:** *All code starting with a `$` is meant to run on your terminal (a bash prompt). All code starting with a `>>>` is meant to run in a python interpreter, like <a href="https://pypi.org/project/ipython/">ipython</a>.*</sub>
 
-Bostrom SDK can be installed (preferably in a `virtual environment` from PyPI using `pip`) as follows:
+Cyber SDK can be installed (preferably in a `virtual environment` from PyPI using `pip`) as follows:
 
 ```
-$ pip install -U bostrom_sdk
+$ pip install -U cyber_sdk
 ```
 <sub>*You might have `pip3` installed instead of `pip`; proceed according to your own setup.*<sub>
 
 ## Dependencies
-Bostrom SDK uses <a href="https://python-poetry.org/">Poetry</a> to manage dependencies. To get set up with all the required dependencies, run:
+Cyber SDK uses <a href="https://python-poetry.org/">Poetry</a> to manage dependencies. To get set up with all the required dependencies, run:
 ```
 $ pip install poetry
 $ poetry install
@@ -84,13 +84,13 @@ $ poetry install
 
 
 ## Tests
-Bostrom SDK provides extensive tests for data classes and functions. To run them, after the steps in [Dependencies](#dependencies):
+Cyber SDK provides extensive tests for data classes and functions. To run them, after the steps in [Dependencies](#dependencies):
 ```
 $ make test
 ```
 
 ## Code Quality
-Bostrom SDK uses <a href="https://black.readthedocs.io/en/stable/">Black</a>, <a href="https://isort.readthedocs.io/en/latest/">isort</a>, and <a href="https://mypy.readthedocs.io/en/stable/index.html">Mypy</a> for checking code quality and maintaining style. To reformat, after the steps in [Dependencies](#dependencies):
+Cyber SDK uses <a href="https://black.readthedocs.io/en/stable/">Black</a>, <a href="https://isort.readthedocs.io/en/latest/">isort</a>, and <a href="https://mypy.readthedocs.io/en/stable/index.html">Mypy</a> for checking code quality and maintaining style. To reformat, after the steps in [Dependencies](#dependencies):
 ```
 $ make qa && make format
 ```
@@ -98,23 +98,23 @@ $ make qa && make format
 <br/>
 
 # Usage Examples
-Bostrom SDK can help you read block data, sign and send transactions, deploy and interact with contracts, and many more.
-The following examples are provided to help you get started. Use cases and functionalities of the Bostrom SDK are not limited to the following examples and can be found in full <a href="https://bostrom-money.github.io/bostrom.py/index.html">here</a>.
+Cyber SDK can help you read block data, sign and send transactions, deploy and interact with contracts, and many more.
+The following examples are provided to help you get started. Use cases and functionalities of the Cyber SDK are not limited to the following examples and can be found in full <a href="https://savetheales.github.io/cyber.py/index.html">here</a>.
 
-In order to interact with the Bostrom blockchain, you'll need a connection to a Bostrom node. This can be done through setting up an LCDClient (The LCDClient is an object representing an HTTP connection to a Bostrom LCD node.):
+In order to interact with the Cyber blockchain, you'll need a connection to a Cyber node. This can be done through setting up an LCDClient (The LCDClient is an object representing an HTTP connection to a Cyber LCD node.):
 
 ```
->>> from bostrom_sdk.client.lcd import LCDClient
->>> bostrom = LCDClient(chain_id="space-pussy-1", url="https://lcd.space-pussy-1.cybernode.ai/")
+>>> from cyber_sdk.client.lcd import LCDClient
+>>> cyber = LCDClient(chain_id="space-pussy-1", url="https://lcd.space-pussy-1.cybernode.ai/")
 ```
 
 ## Getting Blockchain Information
 
-Once properly configured, the `LCDClient` instance will allow you to interact with the Bostrom blockchain. Try getting the latest block height:
+Once properly configured, the `LCDClient` instance will allow you to interact with the Cyber blockchain. Try getting the latest block height:
 
 
 ```
->>> bostrom.tendermint.block_info()['block']['header']['height']
+>>> cyber.tendermint.block_info()['block']['header']['height']
 ```
 
 `'1687543'`
@@ -126,21 +126,21 @@ If you want to make asynchronous, non-blocking LCD requests, you can use AsyncLC
 
 <pre><code>
 >>> import asyncio 
->>> from bostrom_sdk.client.lcd import AsyncLCDClient
+>>> from cyber_sdk.client.lcd import AsyncLCDClient
 
 >>> async def main():
-      <strong>bostrom = AsyncLCDClient("https://lcd.bostrom.dev", "columbus-5")</strong>
-      total_supply = await bostrom.bank.total()
+      <strong>cyber = AsyncLCDClient("https://lcd.bostrom.dev", "columbus-5")</strong>
+      total_supply = await cyber.bank.total()
       print(total_supply)
-      <strong>await bostrom.session.close # you must close the session</strong>
+      <strong>await cyber.session.close # you must close the session</strong>
 
 >>> asyncio.get_event_loop().run_until_complete(main())
 </code></pre>
 
 ## Building and Signing Transactions
 
-If you wish to perform a state-changing operation on the Bostrom blockchain such as sending tokens, swapping assets, withdrawing rewards, or even invoking functions on smart contracts, you must create a **transaction** and broadcast it to the network.
-Bostrom SDK provides functions that help create StdTx objects.
+If you wish to perform a state-changing operation on the cyber blockchain such as sending tokens, swapping assets, withdrawing rewards, or even invoking functions on smart contracts, you must create a **transaction** and broadcast it to the network.
+cyber SDK provides functions that help create StdTx objects.
 
 ### Example Using a Wallet (*recommended*)
 
@@ -150,21 +150,21 @@ Use `LCDClient.wallet()` to create a Wallet from any Key instance. The Key provi
 
 
 ```
->>> from bostrom_sdk.client.lcd import LCDClient
->>> from bostrom_sdk.key.mnemonic import MnemonicKey
+>>> from cyber_sdk.client.lcd import LCDClient
+>>> from cyber_sdk.key.mnemonic import MnemonicKey
 
 >>> mk = MnemonicKey(mnemonic=MNEMONIC) 
->>> bostrom = LCDClient("https://lcd.bostrom.dev", "columbus-5")
->>> wallet = bostrom.wallet(mk)
+>>> cyber = LCDClient("https://lcd.bostrom.dev", "columbus-5")
+>>> wallet = cyber.wallet(mk)
 ```
 
 Once you have your Wallet, you can simply create a StdTx using `Wallet.create_and_sign_tx`.
 
 
 ```
->>> from bostrom_sdk.core.auth import Fee
->>> from bostrom_sdk.core.bank import MsgSend
->>> from bostrom_sdk.client.lcd.api.tx import CreateTxOptions
+>>> from cyber_sdk.core.auth import Fee
+>>> from cyber_sdk.core.bank import MsgSend
+>>> from cyber_sdk.client.lcd.api.tx import CreateTxOptions
 
 >>> tx = wallet.create_and_sign_tx(CreateTxOptions(
         msgs=[MsgSend(
