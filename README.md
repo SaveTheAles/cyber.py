@@ -1,25 +1,22 @@
 <br/>
+<div  align="center">
+The Python SDK for Cyber Protocol (Bostrom and Space Pussy Networks)
 <br/>
+<p><sub>(Unfamiliar with Cyber protocol?  <a href="https://github.com/cybercongress/">Check out the cyber~сongress github</a>)</sub></p>
 
-<div  align="center"> <p > <img src="https://raw.githubusercontent.com/bostrom-money/bostrom-sdk-python/main/docs/img/logo.png" width=500 alt="py-sdk-logo"></p>
-
-The Python SDK for Bostrom
-<br/>
-<p><sub>(Unfamiliar with Bostrom?  <a href="https://docs.bostrom.money/">Check out the Bostrom Docs</a>)</sub></p>
-
-  <p > <img alt="GitHub" src="https://img.shields.io/github/license/bostrom-money/bostrom-sdk-python">
-<img alt="Python" src="https://img.shields.io/pypi/pyversions/bostrom-sdk">
-  <img alt="pip" src="https://img.shields.io/pypi/v/bostrom-sdk"></p>
+  <p > <img alt="GitHub" src="https://img.shields.io/github/license/SaveTheAles/cyber.py">
+<img alt="Python" src="https://img.shields.io/pypi/pyversions/cyber-sdk">
+  <img alt="pip" src="https://img.shields.io/pypi/v/cyber-sdk"></p>
 <p>
-  <a href="https://bostrom-money.github.io/bostrom.py/index.html"><strong>Explore the Docs »</strong></a>
+  <a href="https://SaveTheAles.github.io/cyber.py/index.html"><strong>Explore the Docs»</strong></a>
 <br/>
-  <a href="https://pypi.org/project/bostrom-sdk/">PyPI Package</a>
+  <a href="https://pypi.org/project/cyber-sdk/">PyPI Package</a>
   ·
-  <a href="https://github.com/bostrom-money/bostrom.py">GitHub Repository</a>
+  <a href="https://github.com/SaveTheAles/cyber.py">GitHub Repository</a>
 </p></div>
 
 
-The Bostrom Software Development Kit (SDK) in Python is a simple library toolkit for building software that can interact with the Bostrom blockchain and provides simple abstractions over core data structures, serialization, key management, and API request generation.
+The Cyber Software Development Kit (SDK) in Python is a simple library toolkit for building software that can interact with the Bostrom / Space Pussy blockchains and provides simple abstractions over core data structures, serialization, key management, and API request generation.
 
 ## Features
 
@@ -140,7 +137,7 @@ If you want to make asynchronous, non-blocking LCD requests, you can use AsyncLC
 ## Building and Signing Transactions
 
 If you wish to perform a state-changing operation on the cyber blockchain such as sending tokens, swapping assets, withdrawing rewards, or even invoking functions on smart contracts, you must create a **transaction** and broadcast it to the network.
-cyber SDK provides functions that help create StdTx objects.
+Cyber SDK provides functions that help create StdTx objects.
 
 ### Example Using a Wallet (*recommended*)
 
@@ -254,14 +251,13 @@ You can give this <a href="https://opensource.guide/how-to-contribute/#how-to-su
 
 This software is licensed under the MIT license. See [LICENSE](./LICENSE) for full disclosure.
 
-© 2021 Bostromform Labs, PTE.
-
 <hr/>
 
 <p>&nbsp;</p>
 <p align="center">
-    <a href="https://bostrom.money/"><img src="https://assets.website-files.com/611153e7af981472d8da199c/61794f2b6b1c7a1cb9444489_symbol-bostrom-blue.svg" alt="Bostrom-logo" width=200/></a>
+    <a href="https://cyb.ai/"><img src="https://cyb.ai/large-green.28aa247dfc.png" alt="Bostrom-logo" width=100/></a>
+    <a href="https://space-pussy.cyb.ai/"><img src="https://space-pussy.cyb.ai/large-purple-circle.7591ed35cc.png" alt="Bostrom-logo" width=100/></a>
 <div align="center">
-  <sub><em>Powering the innovation of money.</em></sub>
+  <sub><em>Your Superintelligence</em></sub>
 </div>
 
