@@ -40,11 +40,13 @@ from .wallet import AsyncWallet, Wallet
 
 def get_default(chain_id: str) -> [Coins, Numeric]:
     if chain_id == "space-pussy-1":
-        return [Coins.from_str("0.15uusd"), Numeric.parse(1.75)]
+        return [Coins.from_str("0.15boot"), Numeric.parse(1.75)]
     if chain_id == "bostrom":
-        return [Coins.from_str("0.15uusd"), Numeric.parse(1.75)]
+        return [Coins.from_str("0.15boot"), Numeric.parse(1.75)]
     if chain_id == "localbostrom":
-        return [Coins.from_str("0.15uusd"), Numeric.parse(1.75)]
+        return [Coins.from_str("0.15boot"), Numeric.parse(1.75)]
+    if chain_id == "space-pussy":
+        return [Coins.from_str("0.15pussy"), Numeric.parse(1.75)]
 
     raise ValueError("chain_id is invalid")
 
