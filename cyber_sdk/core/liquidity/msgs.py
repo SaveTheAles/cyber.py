@@ -77,7 +77,7 @@ class MsgSwapWithinBatch(Msg):
             swap_type_id=self.swap_type_id,
             offer_coin=self.offer_coin.to_proto(),
             demand_coin_denom=self.demand_coin_denom,
-            offer_coin_fee=self.offer_coin_fee,
+            offer_coin_fee=self.offer_coin_fee.to_proto(),
             order_price=self.order_price,
         )
 
