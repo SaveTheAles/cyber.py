@@ -11,7 +11,7 @@ from cyber_sdk.util.contract import get_code_id, get_contract_address, read_file
 
 
 async def main():
-    bostrom = AsyncLCDClient(url="https://lcd.space-pussy-1.cybernode.ai/", chain_id="space-pussy-1")
+    bostrom = AsyncLCDClient(url="https://lcd.bostrom.cybernode.ai/", chain_id="bostrom")
     bostrom.gas_prices = "1boot"
     # test1 = bostrom.wallets["test1"]
     acc = MnemonicKey(

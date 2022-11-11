@@ -31,7 +31,7 @@ from cyber_sdk.core.ibc.msgs import (
     MsgUpgradeClient,
 )
 from cyber_sdk.core.ibc_transfer import MsgTransfer
-from cyber_sdk.core.market import MsgSwap, MsgSwapSend
+from cyber_sdk.core.liquidity import MsgSwapWithinBatch
 from cyber_sdk.core.oracle import (
     MsgAggregateExchangeRatePrevote,
     MsgAggregateExchangeRateVote,
@@ -65,7 +65,7 @@ distribution_msgs = [
     MsgWithdrawValidatorCommission,
 ]
 gov_msgs = [MsgDeposit, MsgSubmitProposal, MsgVote]
-market_msgs = [MsgSwap, MsgSwapSend]
+liquidity_msgs = [MsgSwapWithinBatch]
 authz_msgs = [
     MsgExecAuthorized,
     MsgGrantAuthorization,
@@ -120,7 +120,7 @@ parse_msg = create_demux(
         *bank_msgs,
         *distribution_msgs,
         *gov_msgs,
-        *market_msgs,
+        *liquidity_msgs,
         *oracle_msgs,
         *slashing_msgs,
         *staking_msgs,
@@ -134,7 +134,7 @@ parse_proto = create_demux_proto(
         *bank_msgs,
         *distribution_msgs,
         *gov_msgs,
-        *market_msgs,
+        *liquidity_msgs,
         *oracle_msgs,
         *slashing_msgs,
         *staking_msgs,

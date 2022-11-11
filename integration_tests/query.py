@@ -10,8 +10,8 @@ from cyber_sdk.util.contract import get_code_id
 
 def main():
     bostrom = LCDClient(
-        url="https://lcd.space-pussy-1.cybernode.ai/",
-        chain_id="space-pussy-1",
+        url="https://lcd.bostrom.cybernode.ai/",
+        chain_id="bostrom",
     )
 
     result = bostrom.tx.tx_infos_by_height(None)

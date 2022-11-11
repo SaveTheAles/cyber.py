@@ -20,8 +20,8 @@ You can use PaginationOptions as APIParams for params of query functions.
     from bostrom_sdk.client.lcd import LCDClient, PaginationOptions
 
     bostrom = LCDClient(
-        url="https://lcd.space-pussy-1.cybernode.ai/",
-        chain_id="space-pussy-1",
+        url="https://lcd.bostrom.cybernode.ai/",
+        chain_id="bostrom",
     )
 
 

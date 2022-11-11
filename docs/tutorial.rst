@@ -35,7 +35,7 @@ This can be done through setting up an LCDClient:
 
     from bostrom_sdk.client.lcd import LCDClient
 
-    bostrom = LCDClient(chain_id="space-pussy-1", url="https://lcd.space-pussy-1.cybernode.ai/")
+    bostrom = LCDClient(chain_id="bostrom", url="https://lcd.bostrom.cybernode.ai/")
     print(bostrom.tendermint.node_info())
 
 

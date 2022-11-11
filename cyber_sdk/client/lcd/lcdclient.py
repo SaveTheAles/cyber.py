@@ -23,7 +23,7 @@ from .api.gov import AsyncGovAPI, GovAPI
 from .api.graph import AsyncGraphAPI, GraphAPI
 from .api.ibc import AsyncIbcAPI, IbcAPI
 from .api.ibc_transfer import AsyncIbcTransferAPI, IbcTransferAPI
-from .api.market import AsyncMarketAPI, MarketAPI
+from .api.liquidity import AsyncLiquidityAPI, LiquidityAPI
 from .api.mint import AsyncMintAPI, MintAPI
 from .api.oracle import AsyncOracleAPI, OracleAPI
 from .api.rank import AsyncRankAPI, RankAPI
@@ -39,7 +39,7 @@ from .wallet import AsyncWallet, Wallet
 
 
 def get_default(chain_id: str) -> [Coins, Numeric]:
-    if chain_id == "space-pussy-1":
+    if chain_id == "bostrom":
         return [Coins.from_str("0.15boot"), Numeric.parse(1.75)]
     if chain_id == "bostrom":
         return [Coins.from_str("0.15boot"), Numeric.parse(1.75)]
@@ -83,7 +83,7 @@ class AsyncLCDClient:
         self.feegrant = AsyncFeeGrantAPI(self)
         self.gov = AsyncGovAPI(self)
         self.graph = AsyncGraphAPI(self)
-        self.market = AsyncMarketAPI(self)
+        self.liquidity = AsyncLiquidityAPI(self)
         self.mint = AsyncMintAPI(self)
         self.authz = AsyncAuthzAPI(self)
         self.oracle = AsyncOracleAPI(self)
@@ -225,8 +225,8 @@ class LCDClient(AsyncLCDClient):
     feegrant: FeeGrantAPI
     """:class:`FeeGrant<cyber_sdk.client.lcd.api.feegrant.FeeGrantAPI>`."""
 
-    market: MarketAPI
-    """:class:`MarketAPI<cyber_sdk.client.lcd.api.market.MarketAPI>`."""
+    liquidity: LiquidityAPI
+    """:class:`LiquidityAPI<cyber_sdk.client.lcd.api.liquidity.LiquidityAPI>`."""
 
     mint: MintAPI
     """:class:`MintAPI<cyber_sdk.client.lcd.api.mint.MintAPI>`."""
@@ -286,7 +286,7 @@ class LCDClient(AsyncLCDClient):
         self.gov = GovAPI(self)
         self.graph = GraphAPI(self)
         self.feegrant = FeeGrantAPI(self)
-        self.market = MarketAPI(self)
+        self.liquidity = LiquidityAPI(self)
         self.mint = MintAPI(self)
         self.authz = AuthzAPI(self)
         self.oracle = OracleAPI(self)

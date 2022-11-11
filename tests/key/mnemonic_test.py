@@ -32,7 +32,7 @@ def test_random():
 
 def test_signature():
 
-    bostrom = LCDClient(url="https://lcd.space-pussy-1.cybernode.ai/", chain_id="space-pussy-1")
+    bostrom = LCDClient(url="https://lcd.bostrom.cybernode.ai/", chain_id="bostrom")
 
     mk = MnemonicKey(
         "island relax shop such yellow opinion find know caught erode blue dolphin behind coach tattoo light focus snake common size analyst imitate employ walnut"

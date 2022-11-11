@@ -265,7 +265,7 @@ blockchain (which will not have been updated).
 
     tx2 = wallet.create_and_sign_tx(
         CreateTxOptions(
-            msgs=[MsgSwap(...)],
+            msgs=[MsgSwapWithinBatch(...)],
             sequence=sequence+1
         )
     )

@@ -12,8 +12,8 @@ from cyber_sdk.key.mnemonic import MnemonicKey
 
 
 bostrom = LCDClient(
-    url="https://lcd.space-pussy-1.cybernode.ai/",
-    chain_id="space-pussy-1",
+    url="https://lcd.bostrom.cybernode.ai/",
+    chain_id="bostrom",
 )
 key = MnemonicKey(
     mnemonic='develop sail resist join lumber door door jelly apology trap note seek gentle bamboo enough concert exhibit disorder turn soul bullet cash debris wire'

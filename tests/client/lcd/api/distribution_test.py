@@ -2,8 +2,8 @@ from cyber_sdk.client.lcd import LCDClient
 from cyber_sdk.core.bech32 import is_acc_address
 
 bostrom = LCDClient(
-    url="https://lcd.space-pussy-1.cybernode.ai/",
-    chain_id="space-pussy-1",
+    url="https://lcd.bostrom.cybernode.ai/",
+    chain_id="bostrom",
 )
 
 

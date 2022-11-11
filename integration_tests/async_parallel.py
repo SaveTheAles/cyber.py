@@ -12,7 +12,7 @@ async def with_sem(aw, sem):
 
 
 async def main():
-    bostrom = AsyncLCDClient(url="https://lcd.space-pussy-1.cybernode.ai/", chain_id="space-pussy-1")
+    bostrom = AsyncLCDClient(url="https://lcd.bostrom.cybernode.ai/", chain_id="bostrom")
     validators, _ = await bostrom.staking.validators()
     validator_addresses = [v.operator_address for v in validators]
 

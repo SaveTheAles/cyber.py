@@ -2,8 +2,8 @@ from cyber_sdk.client.lcd import LCDClient, PaginationOptions
 from cyber_sdk.client.lcd.api.gov import ProposalStatus
 
 bostrom = LCDClient(
-    url="https://lcd.space-pussy-1.cybernode.ai/",
-    chain_id="space-pussy-1",
+    url="https://lcd.bostrom.cybernode.ai/",
+    chain_id="bostrom",
 )
 
 
