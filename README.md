@@ -66,15 +66,14 @@ Cyber SDK requires <a href="https://www.python.org/downloads/">Python v3.7+</a>.
 <sub>**NOTE:** *All code starting with a `$` is meant to run on your terminal (a bash prompt). All code starting with a `>>>` is meant to run in a python interpreter, like <a href="https://pypi.org/project/ipython/">ipython</a>.*</sub>
 
 Cyber SDK can be installed (preferably in a `virtual environment` from PyPI using `pip`) as follows:
-
-```
+```bash
 $ pip install -U cyber_sdk
 ```
 <sub>*You might have `pip3` installed instead of `pip`; proceed according to your own setup.*<sub>
 
 ## Dependencies
 Cyber SDK uses <a href="https://python-poetry.org/">Poetry</a> to manage dependencies. To get set up with all the required dependencies, run:
-```
+```bash
 $ pip install poetry
 $ poetry install
 ```
@@ -82,13 +81,13 @@ $ poetry install
 
 ## Tests
 Cyber SDK provides extensive tests for data classes and functions. To run them, after the steps in [Dependencies](#dependencies):
-```
+```bash
 $ make test
 ```
 
 ## Code Quality
 Cyber SDK uses <a href="https://black.readthedocs.io/en/stable/">Black</a>, <a href="https://isort.readthedocs.io/en/latest/">isort</a>, and <a href="https://mypy.readthedocs.io/en/stable/index.html">Mypy</a> for checking code quality and maintaining style. To reformat, after the steps in [Dependencies](#dependencies):
-```
+```bash
 $ make qa && make format
 ```
 
@@ -100,9 +99,9 @@ The following examples are provided to help you get started. Use cases and funct
 
 In order to interact with the Cyber blockchain, you'll need a connection to a Cyber node. This can be done through setting up an LCDClient (The LCDClient is an object representing an HTTP connection to a Cyber LCD node.):
 
-```
->>> from cyber_sdk.client.lcd import LCDClient
->>> cyber = LCDClient(chain_id="space-pussy-1", url="https://lcd.space-pussy-1.cybernode.ai/")
+```python
+from cyber_sdk.client.lcd import LCDClient
+cyber = LCDClient(chain_id="bostrom", url="https://lcd.bostrom.cybernode.ai/")
 ```
 
 ## Getting Blockchain Information
@@ -110,29 +109,29 @@ In order to interact with the Cyber blockchain, you'll need a connection to a Cy
 Once properly configured, the `LCDClient` instance will allow you to interact with the Cyber blockchain. Try getting the latest block height:
 
 
-```
->>> cyber.tendermint.block_info()['block']['header']['height']
+```python
+cyber.tendermint.block_info()['block']['header']['height']
 ```
 
-`'1687543'`
+`'5490476'`
 
 
 ### Async Usage
 
 If you want to make asynchronous, non-blocking LCD requests, you can use AsyncLCDClient. The interface is similar to LCDClient, except the module and wallet API functions must be awaited.
 
-<pre><code>
->>> import asyncio 
->>> from cyber_sdk.client.lcd import AsyncLCDClient
+```python
+import asyncio 
+from cyber_sdk.client.lcd import AsyncLCDClient
 
->>> async def main():
-      <strong>cyber = AsyncLCDClient("https://lcd.bostrom.dev", "columbus-5")</strong>
+async def main():
+      cyber = AsyncLCDClient("https://lcd.bostrom.cybernode.ai/", "bostrom")
       total_supply = await cyber.bank.total()
       print(total_supply)
-      <strong>await cyber.session.close # you must close the session</strong>
+      await cyber.session.close # you must close the session
 
->>> asyncio.get_event_loop().run_until_complete(main())
-</code></pre>
+asyncio.get_event_loop().run_until_complete(main())
+```
 
 ## Building and Signing Transactions
 
@@ -146,39 +145,39 @@ A `Wallet` allows you to create and sign a transaction in a single step by autom
 Use `LCDClient.wallet()` to create a Wallet from any Key instance. The Key provided should correspond to the account you intend to sign the transaction with.
 
 
-```
->>> from cyber_sdk.client.lcd import LCDClient
->>> from cyber_sdk.key.mnemonic import MnemonicKey
+```python
+from cyber_sdk.client.lcd import LCDClient
+from cyber_sdk.key.mnemonic import MnemonicKey
 
->>> mk = MnemonicKey(mnemonic=MNEMONIC) 
->>> cyber = LCDClient("https://lcd.bostrom.dev", "columbus-5")
->>> wallet = cyber.wallet(mk)
+mk = MnemonicKey(mnemonic=MNEMONIC) 
+cyber = LCDClient("https://lcd.bostrom.cybernode.ai/", "bostrom")
+wallet = cyber.wallet(mk)
 ```
 
 Once you have your Wallet, you can simply create a StdTx using `Wallet.create_and_sign_tx`.
 
 
-```
->>> from cyber_sdk.core.auth import Fee
->>> from cyber_sdk.core.bank import MsgSend
->>> from cyber_sdk.client.lcd.api.tx import CreateTxOptions
+```python
+from cyber_sdk.core.fee import Fee
+from cyber_sdk.core.bank import MsgSend
+from cyber_sdk.client.lcd.api.tx import CreateTxOptions
 
->>> tx = wallet.create_and_sign_tx(CreateTxOptions(
+tx = wallet.create_and_sign_tx(CreateTxOptions(
         msgs=[MsgSend(
             wallet.key.acc_address,
             RECIPIENT,
-            "1000000boot"    # send 1 luna
+            "1000000boot"    # send 1_000_000 BOOT
         )],
         memo="test transaction!",
-        fee=Fee(200000, "120000boot")
+        fee=Fee(200000, "20000boot")
     ))
 ```
 
 You should now be able to broadcast your transaction to the network.
 
-```
->>> result = bostrom.tx.broadcast(tx)
->>> print(result)
+```python
+result = bostrom.tx.broadcast(tx)
+print(result)
 ```
 
 <br/>
