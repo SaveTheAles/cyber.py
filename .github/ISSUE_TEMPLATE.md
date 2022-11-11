@@ -1,4 +1,4 @@
-- bostrom_sdk version:
+- cyber_sdk version:
 - Python version:
 - Operating System:
 

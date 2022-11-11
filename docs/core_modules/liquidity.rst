@@ -4,11 +4,11 @@ Liquidity
 API
 ---
 
-.. autoclass:: bostrom_sdk.client.lcd.api.liquidity.LiquidityAPI
+.. autoclass:: cyber_sdk.client.lcd.api.liquidity.LiquidityAPI
     :members: 
 
 Messages
 --------
 
-.. automodule:: bostrom_sdk.core.liquidity.msgs
+.. automodule:: cyber_sdk.core.liquidity.msgs
     :members:

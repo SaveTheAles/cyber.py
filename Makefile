@@ -27,7 +27,7 @@ help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
 coverage: ## check code coverage
-	poetry run coverage run --source bostrom_sdk -m pytest
+	poetry run coverage run --source cyber_sdk -m pytest
 	poetry run coverage report -m
 	poetry run coverage html
 	# $(BROWSER) htmlcov/index.html
@@ -54,11 +54,11 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 test: ## runs tests
-	poetry run pytest --cov=bostrom_sdk
+	poetry run pytest --cov=cyber_sdk
 
 qa: ## runs static analysis with mypy and flake8
-	poetry run flake8 bostrom_sdk
-	poetry run mypy -p bostrom_sdk
+	poetry run flake8 cyber_sdk
+	poetry run mypy -p cyber_sdk
 
 format: ## runs code style and formatter
 	poetry run isort .

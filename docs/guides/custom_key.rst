@@ -10,16 +10,16 @@ Here are just a couple  that help guide
 your design pathways:
 
 Is the private key accessible by developer?
-    * YES: Subclass :class:`bostrom_sdk.key.raw.RawKey`
-    * NO: Subclass :class:`bostrom_sdk.key.key.Key`
+    * YES: Subclass :class:`cyber_sdk.key.raw.RawKey`
+    * NO: Subclass :class:`cyber_sdk.key.key.Key`
 
 Can the signing agent sign arbitrary data payloads AND use ECDSA on Secp256k1?
-    * YES: Override :meth:`Key.sign()<bostrom_sdk.key.key.Key.sign>`
-    * NO: Override :meth:`Key.create_signature()<bostrom_sdk.key.key.Key.create_signature>`
+    * YES: Override :meth:`Key.sign()<cyber_sdk.key.key.Key.sign>`
+    * NO: Override :meth:`Key.create_signature()<cyber_sdk.key.key.Key.create_signature>`
 
 Can you determine the public key in advance, and is it static?
     * YES: Call ``super()`` in constructor with public key to generate addresses & pubkeys
-    * NO: Override :meth:`acc_address<bostrom_sdk.key.key.Key.acc_address>`, :meth:`val_address<bostrom_sdk.key.key.Key.val_address>`, :meth:`acc_pubkey<bostrom_sdk.key.key.Key.acc_pubkey>`, :meth:`val_pubkey<bostrom_sdk.key.key.Key.val_pubkey>` properties.
+    * NO: Override :meth:`acc_address<cyber_sdk.key.key.Key.acc_address>`, :meth:`val_address<cyber_sdk.key.key.Key.val_address>`, :meth:`acc_pubkey<cyber_sdk.key.key.Key.acc_pubkey>`, :meth:`val_pubkey<cyber_sdk.key.key.Key.val_pubkey>` properties.
 
 
 Usually, reasons for requiring a custom Key fall into one of 3 patterns:
@@ -45,7 +45,7 @@ The source for MnemonicKey is provided as an example:
 
 .. code-block:: python
 
-    from bostrom_sdk.key.raw import RawKey
+    from cyber_sdk.key.raw import RawKey
     from bip32utils import BIP32_HARDEN, BIP32Key
     from mnemonic import Mnemonic
 

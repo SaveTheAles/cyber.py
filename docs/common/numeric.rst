@@ -3,7 +3,7 @@
 Numeric Types
 =============
 
-.. autoclass:: bostrom_sdk.core.numeric.Numeric
+.. autoclass:: cyber_sdk.core.numeric.Numeric
     :members:
 
 Integers
@@ -21,5 +21,5 @@ The Python's ``int`` provides support for BigNumber implementation for artihmeti
 Decimals
 --------
 
-.. autoclass:: bostrom_sdk.core.Dec
+.. autoclass:: cyber_sdk.core.Dec
     :members:

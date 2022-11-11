@@ -33,7 +33,7 @@ This can be done through setting up an LCDClient:
 
 .. code-block:: python
 
-    from bostrom_sdk.client.lcd import LCDClient
+    from cyber_sdk.client.lcd import LCDClient
 
     bostrom = LCDClient(chain_id="bostrom", url="https://lcd.bostrom.cybernode.ai/")
     print(bostrom.tendermint.node_info())

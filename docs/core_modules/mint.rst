@@ -4,5 +4,5 @@ Mint
 API
 ---
 
-.. autoclass:: bostrom_sdk.client.lcd.api.mint.MintAPI
+.. autoclass:: cyber_sdk.client.lcd.api.mint.MintAPI
     :members: 

@@ -13,7 +13,7 @@ Create a new LCDClient instance by specifying the URL and chain ID of the node t
 
 .. code-block:: python
 
-    >>> from bostrom_sdk.client.lcd import LCDClient
+    >>> from cyber_sdk.client.lcd import LCDClient
     >>> bostrom = LCDClient(url="https://lcd.bostrom.cybernode.ai/", chain_id="bostrom")
     >>> bostrom.tendermint.node_info()['default_node_info']['network']
     'columbus-5'
@@ -24,7 +24,7 @@ You can also specify gas estimation parameters for your chain for building trans
     :emphasize-lines: 8-9
 
     import requests
-    from bostrom_sdk.core import Coins
+    from cyber_sdk.core import Coins
 
     res = requests.get("https://fcd.bostrom.dev/v1/txs/gas_prices")
     bostrom = LCDClient(
@@ -39,7 +39,7 @@ Using the module APIs
 ---------------------
 
 LCDClient includes functions for interacting with each of the core modules (see sidebar). These functions are divided and
-and organized by module name (eg. :class:`bostrom.liquidity<bostrom_sdk.client.lcd.api.liquidity.LiquidityAPI>`), and handle
+and organized by module name (eg. :class:`bostrom.liquidity<cyber_sdk.client.lcd.api.liquidity.LiquidityAPI>`), and handle
 the tedium of building HTTP requests, parsing the results, and handling errors. 
 
 Each request fetches live data from the blockchain:
@@ -65,7 +65,7 @@ are useful for easily creating and signing transactions.
 
 .. code-block:: python
 
-    >>> from bostrom_sdk.key.mnemonic import MnemonicKey
+    >>> from cyber_sdk.key.mnemonic import MnemonicKey
     >>> mk = MnemonicKey()
     >>> wallet = bostrom.wallet(mk)
     >>> wallet.account_number()
@@ -75,5 +75,5 @@ are useful for easily creating and signing transactions.
 LCDClient Reference
 -------------------
 
-.. autoclass:: bostrom_sdk.client.lcd.LCDClient
+.. autoclass:: cyber_sdk.client.lcd.LCDClient
     :members:
