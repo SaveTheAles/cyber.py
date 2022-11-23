@@ -4,12 +4,12 @@ Coin & Coins
 Coin
 ----
 
-.. autoclass:: bostrom_sdk.core.coin.Coin
+.. autoclass:: cyber_sdk.core.coin.Coin
     :members:
 
 
 Coins
 -----
 
-.. autoclass:: bostrom_sdk.core.coins.Coins
+.. autoclass:: cyber_sdk.core.coins.Coins
     :members:

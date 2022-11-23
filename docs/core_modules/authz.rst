@@ -4,17 +4,17 @@ Authz
 API
 ---
 
-.. autoclass:: bostrom_sdk.client.lcd.api.authz.AuthzAPI
+.. autoclass:: cyber_sdk.client.lcd.api.authz.AuthzAPI
     :members: 
 
 Data
 ----
 
-.. automodule:: bostrom_sdk.core.authz.data
+.. automodule:: cyber_sdk.core.authz.data
     :members:
 
 Messages
 --------
 
-.. automodule:: bostrom_sdk.core.authz.msgs
+.. automodule:: cyber_sdk.core.authz.msgs
     :members:

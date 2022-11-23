@@ -9,10 +9,10 @@ Contract Deployment Example
 .. code-block:: python
 
     import base64
-    from bostrom_sdk.client.lcd.api.tx import CreateTxOptions
-    from bostrom_sdk.client.localbostrom import LocalBostrom
-    from bostrom_sdk.core.wasm import MsgStoreCode, MsgInstantiateContract, MsgExecuteContract
-    from bostrom_sdk.core.fee import Fee
+    from cyber_sdk.client.lcd.api.tx import CreateTxOptions
+    from cyber_sdk.client.localbostrom import LocalBostrom
+    from cyber_sdk.core.wasm import MsgStoreCode, MsgInstantiateContract, MsgExecuteContract
+    from cyber_sdk.core.fee import Fee
     
     bostrom = LocalBostrom()
     test1 = bostrom.wallets["test1"]

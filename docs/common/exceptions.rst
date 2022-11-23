@@ -1,5 +1,5 @@
 Exceptions
 ==========
 
-.. automodule:: bostrom_sdk.exceptions
+.. automodule:: cyber_sdk.exceptions
     :members:

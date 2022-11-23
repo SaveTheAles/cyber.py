@@ -57,7 +57,7 @@ Unfamiliar with Bostrom? → `Check out Bostrom Docs <https://docs.bostrom.money
     core_modules/bank
     core_modules/distribution
     core_modules/gov
-    core_modules/market
+    core_modules/liquidity
     core_modules/mint
     core_modules/oracle
     core_modules/params

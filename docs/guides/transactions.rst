@@ -5,7 +5,7 @@ If you want to perform a state-changing operation on the Bostrom blockchain such
 sending tokens, swapping assets, withdrawing rewards, or even invoking functions on
 smart contracts, you must create a **transaction** and broadcast it to the network.
 
-An :class:`StdTx<bostrom_sdk.core.tx.Tx>` is a data object that represents
+An :class:`StdTx<cyber_sdk.core.tx.Tx>` is a data object that represents
 a transaction. It contains:
 
 - **msgs**: a list of state-altering messages
@@ -22,16 +22,16 @@ Using a Wallet (recommended)
     This method requires an LCDClient instance with a proper node connection. If you
     can't use Wallet, see `Signing transactions manually`_.
 
-A :class:`Wallet<bostrom_sdk.client.lcd.wallet.Wallet>` allows you to create and sign a transaction in a single step by automatically
+A :class:`Wallet<cyber_sdk.client.lcd.wallet.Wallet>` allows you to create and sign a transaction in a single step by automatically
 fetching the latest information from the blockchain (chain ID, account number, sequence).
 
-Use :meth:`LCDClient.wallet()<bostrom_sdk.client.lcd.LCDClient.wallet>` to create a Wallet from any Key instance. The Key provided should
+Use :meth:`LCDClient.wallet()<cyber_sdk.client.lcd.LCDClient.wallet>` to create a Wallet from any Key instance. The Key provided should
 correspond to the account you intend to sign the transaction with.
 
 .. code-block:: python
 
-    from bostrom_sdk.client.lcd import LCDClient
-    from bostrom_sdk.key.mnemonic import MnemonicKey
+    from cyber_sdk.client.lcd import LCDClient
+    from cyber_sdk.key.mnemonic import MnemonicKey
 
     mk = MnemonicKey(mnemonic=MNEMONIC) 
     bostrom = LCDClient("https://lcd.bostrom.dev", "columbus-5")
@@ -42,9 +42,9 @@ Once you have your Wallet, you can simply create a StdTx using :meth:`Wallet.cre
 
 .. code-block:: python
 
-    from bostrom_sdk.client.lcd.api.tx import CreateTxOptions
-    from bostrom_sdk.core.fee import Fee
-    from bostrom_sdk.core.bank import MsgSend
+    from cyber_sdk.client.lcd.api.tx import CreateTxOptions
+    from cyber_sdk.core.fee import Fee
+    from cyber_sdk.core.bank import MsgSend
 
     tx = wallet.create_and_sign_tx(
         CreateTxOptions(
@@ -69,7 +69,7 @@ And that's it! You should now be able to broadcast your transaction to the netwo
 Automatic fee estimation
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-If no ``fee`` parameter is provided for :meth:`Wallet.create_and_sign_tx()<bostrom_sdk.client.lcd.wallet.Wallet.create_and_sign_tx>`,
+If no ``fee`` parameter is provided for :meth:`Wallet.create_and_sign_tx()<cyber_sdk.client.lcd.wallet.Wallet.create_and_sign_tx>`,
 the transaction fee will be simulated against the node and populated for you. By default, ``Wallet``
 will use the fee estimation parameters of the ``LCDClient`` used to create it. You can override
 this behavior **per transaction**:
@@ -105,7 +105,7 @@ Signing transactions manually
 -----------------------------
 
 Below is the full process of signing a transaction manually that does not use ``Wallet``.
-You will need to build a :class:`SignDoc<bostrom_sdk.core.sign_doc.SignDoc>`,
+You will need to build a :class:`SignDoc<cyber_sdk.core.sign_doc.SignDoc>`,
 sign it, and add the signatures to an ``Tx``.
 
 A SignDoc contains the information required to build a StdTx:
@@ -118,13 +118,13 @@ A SignDoc contains the information required to build a StdTx:
 
 .. code-block:: python
 
-    from bostrom_sdk.client.lcd.api.tx import CreateTxOptions, SignerOptions
-    from bostrom_sdk.client.lcd import LCDClient
-    from bostrom_sdk.core.bank import MsgSend
-    from bostrom_sdk.core.tx import SignMode
-    from bostrom_sdk.key.key import SignOptions
-    from bostrom_sdk.key.mnemonic import MnemonicKey
-    from bostrom_sdk.core import Coin, Coins
+    from cyber_sdk.client.lcd.api.tx import CreateTxOptions, SignerOptions
+    from cyber_sdk.client.lcd import LCDClient
+    from cyber_sdk.core.bank import MsgSend
+    from cyber_sdk.core.tx import SignMode
+    from cyber_sdk.key.key import SignOptions
+    from cyber_sdk.key.mnemonic import MnemonicKey
+    from cyber_sdk.core import Coin, Coins
 
     bostrom = LCDClient("https://lcd.bostrom.dev", "columbus-5")
     key = MnemonicKey(mnemonic=MNEMONIC)
@@ -167,7 +167,7 @@ Applying multiple signatures
 
 Some messages, such as ``MsgMultiSend``, require the transaction to be signed with multiple signatures.
 You must prepare a separate ``SignDoc`` for each signer to sign individually, and then
-combine them in the ``signatures`` field of the final :class:`StdTx<bostrom_sdk.core..tx.Tx>` object.
+combine them in the ``signatures`` field of the final :class:`StdTx<cyber_sdk.core..tx.Tx>` object.
 Each ``SignDoc`` should only differ by ``account`` and ``sequence``, which vary according to the signing key.
 
 .. note::
@@ -176,11 +176,11 @@ Each ``SignDoc`` should only differ by ``account`` and ``sequence``, which vary 
 
 .. code-block:: python
 
-    from bostrom_sdk.client.lcd import LCDClient
-    from bostrom_sdk.core.fee import Fee
-    from bostrom_sdk.core.bank import MsgMultiSend
-    from bostrom_sdk.key.mnemonic import MnemonicKey
-    from bostrom_sdk.core.bank import MsgMultiSend, MultiSendInput, MultiSendOutput
+    from cyber_sdk.client.lcd import LCDClient
+    from cyber_sdk.core.fee import Fee
+    from cyber_sdk.core.bank import MsgMultiSend
+    from cyber_sdk.key.mnemonic import MnemonicKey
+    from cyber_sdk.core.bank import MsgMultiSend, MultiSendInput, MultiSendOutput
 
     bostrom = LCDClient("https://lcd.bostrom.dev", "columbus-5")
     wallet1 = bostrom.wallet(MnemonicKey(mnemonic=MNEMONIC_1))
@@ -265,7 +265,7 @@ blockchain (which will not have been updated).
 
     tx2 = wallet.create_and_sign_tx(
         CreateTxOptions(
-            msgs=[MsgSwap(...)],
+            msgs=[MsgSwapWithinBatch(...)],
             sequence=sequence+1
         )
     )

@@ -4,11 +4,11 @@ Bank
 API
 ---
 
-.. autoclass:: bostrom_sdk.client.lcd.api.bank.BankAPI
+.. autoclass:: cyber_sdk.client.lcd.api.bank.BankAPI
     :members: 
 
 Messages
 --------
 
-.. automodule:: bostrom_sdk.core.bank.msgs
+.. automodule:: cyber_sdk.core.bank.msgs
     :members:

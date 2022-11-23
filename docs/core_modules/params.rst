@@ -4,5 +4,5 @@ Params
 Proposals
 ---------
 
-.. automodule:: bostrom_sdk.core.params.proposals
+.. automodule:: cyber_sdk.core.params.proposals
     :members:

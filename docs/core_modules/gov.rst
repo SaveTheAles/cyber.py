@@ -4,23 +4,23 @@ Gov
 API
 ---
 
-.. autoclass:: bostrom_sdk.client.lcd.api.gov.GovAPI
+.. autoclass:: cyber_sdk.client.lcd.api.gov.GovAPI
     :members: 
 
 Data
 ----
 
-.. automodule:: bostrom_sdk.core.gov.data
+.. automodule:: cyber_sdk.core.gov.data
     :members:
 
 Messages
 --------
 
-.. automodule:: bostrom_sdk.core.gov.msgs
+.. automodule:: cyber_sdk.core.gov.msgs
     :members:
 
 Proposals
 ---------
 
-.. automodule:: bostrom_sdk.core.gov.proposals
+.. automodule:: cyber_sdk.core.gov.proposals
     :members:

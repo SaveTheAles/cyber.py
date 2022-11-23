@@ -16,7 +16,7 @@ async def with_sem(aw, sem):
 
 
 async def main():
-    bostrom = AsyncLCDClient(chain_id="space-pussy-1", url="https://lcd.space-pussy-1.cybernode.ai/")
+    bostrom = AsyncLCDClient(chain_id="bostrom", url="https://lcd.bostrom.cybernode.ai/")
     mk = MnemonicKey(
         mnemonic="index light average senior silent limit usual local involve delay update rack cause inmate wall render magnet common feature laundry exact casual resource hundred"
     )

@@ -13,7 +13,7 @@
                 }]
             }
         }, {
-            "type": "market/MsgSwap",
+            "type": "liquidity/MsgSwapWithinBatch",
             "value": {
                 "trader": "bostrom...",
                 "offer_coin": {

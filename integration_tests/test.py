@@ -14,7 +14,7 @@ import lcd_gov
 
 # list done
 # import tx_send
-# import tx_market
+# import tx_liquidity
 # import tx_wasm
 
 

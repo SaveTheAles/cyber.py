@@ -4,23 +4,23 @@ Distribution
 API
 ---
 
-.. autoclass:: bostrom_sdk.client.lcd.api.distribution.DistributionAPI
+.. autoclass:: cyber_sdk.client.lcd.api.distribution.DistributionAPI
     :members: 
 
 Data
 ----
 
-.. autoclass:: bostrom_sdk.client.lcd.api.distribution.Rewards
+.. autoclass:: cyber_sdk.client.lcd.api.distribution.Rewards
     :members: 
 
 Messages
 --------
 
-.. automodule:: bostrom_sdk.core.distribution.msgs
+.. automodule:: cyber_sdk.core.distribution.msgs
     :members:
 
 Proposals
 ---------
 
-.. automodule:: bostrom_sdk.core.distribution.proposals
+.. automodule:: cyber_sdk.core.distribution.proposals
     :members:

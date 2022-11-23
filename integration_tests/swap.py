@@ -6,14 +6,14 @@ from cyber_sdk.client.lcd import LCDClient
 from cyber_sdk.client.lcd.api.tx import CreateTxOptions
 from cyber_sdk.client.localbostrom import LocalBostrom
 from cyber_sdk.core import Coins
-from cyber_sdk.core.market import MsgSwap
+from cyber_sdk.core.liquidity import MsgSwapWithinBatch
 from cyber_sdk.key.mnemonic import MnemonicKey
 
 
 def main():
     bostrom = LCDClient(
-        chain_id="space-pussy-1",
-        url="https://lcd.space-pussy-1.cybernode.ai/",
+        chain_id="bostrom",
+        url="https://lcd.bostrom.cybernode.ai/",
     )
     key = MnemonicKey(
         mnemonic="notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius"
@@ -22,8 +22,8 @@ def main():
     test1 = bostrom.wallet(key=key)
 
     print(test1)
-    msg = MsgSwap(
-        trader="bostrom1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v",
+    msg = MsgSwapWithinBatch(
+        swap_requester_address="bostrom1x46rqay4d3cssq8gxxvqz8xt6nwlz4td20k38v",
         offer_coin="100000boot",
         ask_denom="uusd",
     )

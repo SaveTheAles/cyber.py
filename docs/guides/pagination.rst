@@ -6,10 +6,10 @@ You can query information with Pagination to get information partially.
 PaginationOption
 ----------------
 
-.. autoclass:: bostrom_sdk.client.lcd.params.APIParams
+.. autoclass:: cyber_sdk.client.lcd.params.APIParams
     :members:
 
-.. autoclass:: bostrom_sdk.client.lcd.params.PaginationOptions
+.. autoclass:: cyber_sdk.client.lcd.params.PaginationOptions
     :members:
 
 You can use PaginationOptions as APIParams for params of query functions.
@@ -17,11 +17,11 @@ You can use PaginationOptions as APIParams for params of query functions.
 .. code-block:: python
     :emphasize-lines: 5,8
 
-    from bostrom_sdk.client.lcd import LCDClient, PaginationOptions
+    from cyber_sdk.client.lcd import LCDClient, PaginationOptions
 
     bostrom = LCDClient(
-        url="https://lcd.space-pussy-1.cybernode.ai/",
-        chain_id="space-pussy-1",
+        url="https://lcd.bostrom.cybernode.ai/",
+        chain_id="bostrom",
     )
 
 

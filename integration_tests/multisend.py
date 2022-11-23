@@ -4,7 +4,7 @@ import lcd_authz
 import lcd_bank
 import lcd_distribution
 import lcd_gov
-import lcd_market
+import lcd_liquidity
 import lcd_mint
 import lcd_oracle
 import lcd_slashing
@@ -38,8 +38,8 @@ from cyber_sdk.core.public_key import SimplePublicKey
 
 def main():
     bostrom = LCDClient(
-        url="https://lcd.space-pussy-1.cybernode.ai/",
-        chain_id="space-pussy-1",
+        url="https://lcd.bostrom.cybernode.ai/",
+        chain_id="bostrom",
     )
     key = MnemonicKey(
         mnemonic="notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius"

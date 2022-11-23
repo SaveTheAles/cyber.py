@@ -4,7 +4,7 @@ Staking
 API
 ---
 
-.. autoclass:: bostrom_sdk.client.lcd.api.staking.StakingAPI
+.. autoclass:: cyber_sdk.client.lcd.api.staking.StakingAPI
     :members: 
 
 Data
@@ -13,18 +13,18 @@ Data
 Delegation
 ^^^^^^^^^^
 
-.. automodule:: bostrom_sdk.core.staking.data.delegation
+.. automodule:: cyber_sdk.core.staking.data.delegation
     :members:
 
 Validator
 ^^^^^^^^^
 
-.. automodule:: bostrom_sdk.core.staking.data.validator
+.. automodule:: cyber_sdk.core.staking.data.validator
     :members:
 
 
 Messages
 --------
 
-.. automodule:: bostrom_sdk.core.staking.msgs
+.. automodule:: cyber_sdk.core.staking.msgs
     :members:

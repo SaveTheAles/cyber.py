@@ -4,7 +4,7 @@ import lcd_authz
 import lcd_bank
 import lcd_distribution
 import lcd_gov
-import lcd_market
+import lcd_liquidity
 import lcd_mint
 import lcd_oracle
 import lcd_slashing
@@ -32,8 +32,8 @@ from cyber_sdk.core.graph import MsgCyberlink
 
 def main():
     bostrom = LCDClient(
-        url="https://lcd.space-pussy-1.cybernode.ai/",
-        chain_id="space-pussy-1",
+        url="https://lcd.bostrom.cybernode.ai/",
+        chain_id="bostrom",
     )
     key = MnemonicKey(
         mnemonic='develop sail resist join lumber door door jelly apology trap note seek gentle bamboo enough concert exhibit disorder turn soul bullet cash debris wire'
