@@ -22,7 +22,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
           
       - name: Install Poetry
-        run: python install-poetry.py -y
+        run: curl -sSL https://install.python-poetry.org | python -
 
       - name: Update PATH
         run: echo "$HOME/.local/bin" >> $GITHUB_PATH
