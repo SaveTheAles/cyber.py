@@ -18,7 +18,7 @@ license = "MIT"
 packages = [{ include = "cyber_sdk" }]
 readme = "README.md"
 repository = "https://github.com/SaveTheAles/cyber.py.git"
-version = "1.0.2"
+version = "1.1.0"
 
 [tool.poetry.dependencies]
 aiohttp = "^3.8.1"
@@ -54,7 +54,7 @@ pytest-sugar = "^0.9.4"
 sphinx-autodoc-typehints = "^1.17.0"
 uvloop = "^0.16.0"
 watchdog = "^2.1.6"
-wheel = "^0.37.1"
+wheel = "^0.38.4"
 flake8 = "^3.9.2"
 sphinx-rtd-theme = "^1.0.0"
 types-python-dateutil = "^2.8.9"
@@ -69,4 +69,4 @@ extend-ignore = "E203"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=1.1.0"]
