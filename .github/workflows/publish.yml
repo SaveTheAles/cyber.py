@@ -30,7 +30,9 @@ jobs:
         run: poetry check
       - name: poetry-build
         run: poetry build
+      - name: Update PATH
+        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
       - name: poetry-publish
         env:
           PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
-        run: poetry publish --no-interaction -vvv --username __token__ --password '$PYPI_TOKEN'
+        run: poetry publish --no-interaction -vvv --username __token__ --password $PYPI_TOKEN
