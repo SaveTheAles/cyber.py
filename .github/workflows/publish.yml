@@ -22,7 +22,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
           
       - name: Install Poetry
-        run: pipx install poetry
+        run: pip install poetry
 
       - name: Update PATH
         run: echo "$HOME/.local/bin" >> $GITHUB_PATH
