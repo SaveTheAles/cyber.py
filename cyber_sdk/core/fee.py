@@ -27,8 +27,8 @@ class Fee(JSONSerializable):
 
     gas_limit: int = attr.ib(converter=int)
     amount: Coins = attr.ib(converter=Coins)
-    payer: Optional[AccAddress] = attr.ib(default=None)
-    granter: Optional[AccAddress] = attr.ib(default=None)
+    payer: Optional[AccAddress] = attr.ib(default='')
+    granter: Optional[AccAddress] = attr.ib(default='')
 
     def to_amino(self) -> dict:
         return {"gas": str(self.gas_limit), "amount": self.amount.to_amino()}
