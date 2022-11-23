@@ -12,7 +12,7 @@ jobs:
     runs-on: "ubuntu-20.04"
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.8]
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
@@ -43,5 +43,6 @@ jobs:
       - name: Publish distribution 📦 to PyPI
         uses: pypa/gh-action-pypi-publish@master
         with:
+          verbose: true
           user: __token__
           password: ${{ secrets.PYPI_TOKEN }}
