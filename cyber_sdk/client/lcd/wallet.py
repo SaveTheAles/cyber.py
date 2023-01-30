@@ -68,6 +68,7 @@ class Wallet:
     def __init__(self, lcd, key: Key):
         self.lcd = lcd
         self.key = key
+        self.key.prefix = lcd.prefix
 
     def account_number(self) -> int:
         """Fetches account number for the account associated with the Key."""

@@ -23,7 +23,7 @@ LOCALTERRA_MNEMONICS = {
 LOCALTERRA_DEFAULTS = {
     "url": "https://lcd.bostrom.cybernode.ai/",
     "chain_id": "bostrom",
-    "gas_prices": {"uusd": "0.15"},
+    "gas_prices": {"boot": "0.15"},
     "gas_adjustment": 1.75,
 }
 
