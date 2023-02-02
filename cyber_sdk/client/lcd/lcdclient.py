@@ -41,13 +41,12 @@ from .wallet import AsyncWallet, Wallet
 def get_default(chain_id: str) -> [Coins, Numeric]:
     if chain_id == "bostrom":
         return [Coins.from_str("0.15boot"), Numeric.parse(1.75)]
-    if chain_id == "bostrom":
-        return [Coins.from_str("0.15boot"), Numeric.parse(1.75)]
     if chain_id == "localbostrom":
         return [Coins.from_str("0.15boot"), Numeric.parse(1.75)]
     if chain_id == "space-pussy":
         return [Coins.from_str("0.15pussy"), Numeric.parse(1.75)]
-
+    if chain_id == "osmosis-1":
+        return [Coins.from_str("0.0015osmo"), Numeric.parse(1.75)]
     raise ValueError("chain_id is invalid")
 
 
@@ -56,6 +55,7 @@ class AsyncLCDClient:
         self,
         url: str,
         chain_id: Optional[str] = None,
+        prefix: str = "bostrom",
         gas_prices: Optional[Coins.Input] = None,
         gas_adjustment: Optional[Numeric.Input] = None,
         loop: Optional[AbstractEventLoop] = None,
@@ -71,6 +71,7 @@ class AsyncLCDClient:
 
         self.chain_id = chain_id
         self.url = url
+        self.prefix = prefix
         self.last_request_height = None
 
         default_price, default_adjustment = get_default(chain_id)
@@ -198,6 +199,9 @@ class LCDClient(AsyncLCDClient):
     chain_id: str
     """Chain ID of blockchain network connecting to."""
 
+    prefix: str
+    """Address prefix"""
+
     gas_prices: Coins.Input
     """Gas prices to use for automatic fee estimation."""
 
@@ -268,12 +272,14 @@ class LCDClient(AsyncLCDClient):
         self,
         url: str,
         chain_id: str = None,
+        prefix: str = "bostrom",
         gas_prices: Optional[Coins.Input] = None,
         gas_adjustment: Optional[Numeric.Input] = None,
     ):
         super().__init__(
             url,
             chain_id,
+            prefix,
             gas_prices,
             gas_adjustment,
             _create_session=False,
