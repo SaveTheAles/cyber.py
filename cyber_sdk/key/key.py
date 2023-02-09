@@ -55,6 +55,9 @@ class Key:
     pubkeys.
     """
 
+    prefix: Optional[str]
+    """Address prefix"""
+
     def __init__(self, public_key: Optional[PublicKey] = None):
         self.public_key = public_key
         if public_key:
@@ -88,7 +91,7 @@ class Key:
         """
         if not self.raw_address:
             raise ValueError("could not compute acc_address: missing raw_address")
-        return AccAddress(get_bech("bostrom", self.raw_address.hex()))
+        return AccAddress(get_bech(self.prefix, self.raw_address.hex()))
 
     @property
     def val_address(self) -> ValAddress:
@@ -102,7 +105,7 @@ class Key:
         """
         if not self.raw_address:
             raise ValueError("could not compute val_address: missing raw_address")
-        return ValAddress(get_bech("bostromvaloper", self.raw_address.hex()))
+        return ValAddress(get_bech(self.prefix + "valoper", self.raw_address.hex()))
 
     @property
     def acc_pubkey(self) -> AccPubKey:
@@ -116,7 +119,7 @@ class Key:
         """
         if not self.raw_pubkey:
             raise ValueError("could not compute acc_pubkey: missing raw_pubkey")
-        return AccPubKey(get_bech("bostrompub", self.raw_pubkey.hex()))
+        return AccPubKey(get_bech(self.prefix + "pub", self.raw_pubkey.hex()))
 
     @property
     def val_pubkey(self) -> ValPubKey:
@@ -130,7 +133,7 @@ class Key:
         """
         if not self.raw_pubkey:
             raise ValueError("could not compute val_pubkey: missing raw_pubkey")
-        return ValPubKey(get_bech("bostromvaloperpub", self.raw_pubkey.hex()))
+        return ValPubKey(get_bech(self.prefix + "valoperpub", self.raw_pubkey.hex()))
 
     def create_signature_amino(self, sign_doc: SignDoc) -> SignatureV2:
         if self.public_key is None:
