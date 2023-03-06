@@ -3,6 +3,7 @@ from __future__ import annotations
 from asyncio import AbstractEventLoop, get_event_loop
 from json import JSONDecodeError
 from typing import List, Optional, Union
+from warnings import warn
 
 import nest_asyncio
 from aiohttp import ClientSession
@@ -40,14 +41,20 @@ from .wallet import AsyncWallet, Wallet
 
 def get_default(chain_id: str) -> [Coins, Numeric]:
     if chain_id == "bostrom":
-        return [Coins.from_str("0.15boot"), Numeric.parse(1.75)]
+        return [Coins.from_str("0.1boot"), Numeric.parse(1.75)]
     if chain_id == "localbostrom":
-        return [Coins.from_str("0.15boot"), Numeric.parse(1.75)]
+        return [Coins.from_str("0.1boot"), Numeric.parse(1.75)]
     if chain_id == "space-pussy":
-        return [Coins.from_str("0.15pussy"), Numeric.parse(1.75)]
+        return [Coins.from_str("0.1pussy"), Numeric.parse(1.75)]
     if chain_id == "osmosis-1":
-        return [Coins.from_str("0.0015osmo"), Numeric.parse(1.75)]
-    raise ValueError("chain_id is invalid")
+        return [Coins.from_str("0.001uosmo"), Numeric.parse(1.75)]
+    if chain_id == "crescent-1":
+        return [Coins.from_str("0.001ucre"), Numeric.parse(1.75)]
+    if chain_id == "cosmoshub-4":
+        return [Coins.from_str("0.001uatom"), Numeric.parse(1.75)]
+    if chain_id == "juno-1":
+        return [Coins.from_str("0.001ujuno"), Numeric.parse(1.75)]
+    return [Coins(), Numeric.parse(1.75)]
 
 
 class AsyncLCDClient:
@@ -75,6 +82,9 @@ class AsyncLCDClient:
         self.last_request_height = None
 
         default_price, default_adjustment = get_default(chain_id)
+        if default_price == Coins() and gas_prices is None:
+            warn('Please set `gas_price` and optionally `gas_adjustment` for the LCD client to work properly',
+                 stacklevel=2)
         self.gas_prices = Coins(gas_prices) if gas_prices else default_price
         self.gas_adjustment = gas_adjustment if gas_adjustment else default_adjustment
 
